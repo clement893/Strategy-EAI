@@ -555,7 +555,7 @@ export default function Home() {
                 <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">3</div>
                 <div>
                   <h4 className="font-bold text-primary text-sm">Satisfaction NPS</h4>
-                  <p className="text-xs text-slate-600">Maintenir un NPS > 70 malgré la croissance de l'événement.</p>
+                  <p className="text-xs text-slate-600">Maintenir un NPS &gt; 70 malgré la croissance de l'événement.</p>
                 </div>
               </li>
             </ul>
