@@ -6,6 +6,7 @@ import Strategy from "@/components/Strategy";
 import Budget from "@/components/Budget";
 import KPIs from "@/components/KPIs";
 import Timeline from "@/components/Timeline";
+import DetailedCalendar from "@/components/DetailedCalendar";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         <Strategy />
         <Budget />
         <Timeline />
-        <KPIs />
+        <DetailedCalendar />
       </main>
       
       <footer className="py-12 border-t border-white/10 text-center bg-background">
