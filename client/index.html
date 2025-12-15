@@ -6,7 +6,20 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Entertain-AI 2026 - Stratégie Marketing</title>    
+    <title>Entertain-AI 2026 - Stratégie Marketing</title>
+    
+    <!-- Preload critical fonts to prevent FOUT -->
+    <link rel="preload" href="/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Lato-Bold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Lato-Light.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Electrolize-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    
+    <!-- Hide content until fonts are loaded -->
+    <style>
+      body { visibility: hidden; }
+      body.fonts-loaded { visibility: visible; }
+    </style>
+    
     <!-- THIS IS THE START OF A COMMENT BLOCK, BLOCK TO BE DELETED: Google Fonts here, example:
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +28,19 @@
   </head>
 
   <body>
+    <!-- Wait for fonts to load before showing content -->
+    <script>
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function() {
+          document.body.classList.add('fonts-loaded');
+        });
+      } else {
+        // Fallback: show content after a short delay if fonts API is not available
+        setTimeout(function() {
+          document.body.classList.add('fonts-loaded');
+        }, 100);
+      }
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script
