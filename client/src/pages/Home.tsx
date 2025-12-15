@@ -1,25 +1,29 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import Analysis from "@/components/Analysis";
+import Personas from "@/components/Personas";
+import Strategy from "@/components/Strategy";
+import Budget from "@/components/Budget";
+import KPIs from "@/components/KPIs";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-background text-foreground selection:bg-white/20">
+      <Navbar />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <Hero />
+        <Analysis />
+        <Personas />
+        <Strategy />
+        <Budget />
+        <KPIs />
       </main>
+      
+      <footer className="py-8 border-t border-white/10 text-center">
+        <p className="text-xs font-sans text-white/30 uppercase tracking-widest">
+          © 2025 Entertain-AI Strategy • Confidential
+        </p>
+      </footer>
     </div>
   );
 }
