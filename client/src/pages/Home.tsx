@@ -88,49 +88,46 @@ export default function Home() {
         </div>
       </Slide>
 
-      {/* SLIDE 2: VISION */}
-      <Slide isActive={currentSlide === 1} isPrev={currentSlide > 1}>
+      {/* SLIDE 2: MISSION & VISION (Storytelling) */}
+      <Slide isActive={currentSlide === 1} isPrev={currentSlide > 1} backgroundImage="/vr-experience.jpg">
         <div className="grid md:grid-cols-2 gap-12 items-center h-full">
-          <div>
-            <h2 className="text-4xl md:text-5xl mb-8">Notre Vision : <br/><span className="text-accent-green">De l'Événement à la Communauté</span></h2>
-            <div className="glass-panel p-8 mb-8 border-l-4 border-l-accent-purple">
-              <p className="text-lg leading-relaxed text-gray-300">
-                Entertain-AI 2026 n'est pas juste une conférence de deux jours ; c'est le point de ralliement de l'écosystème de l'IA créative au Québec.
-              </p>
-            </div>
-            <p className="text-xl text-gray-400 mb-8">
-              Un lieu pour <span className="text-white font-bold">apprendre</span>, <span className="text-white font-bold">partager</span> et <span className="text-white font-bold">jouer</span>.
+          <div className="glass-panel p-10 backdrop-blur-xl border-l-4 border-l-accent-purple">
+            <h3 className="text-accent-purple font-display tracking-widest mb-4">NOTRE MISSION</h3>
+            <p className="text-3xl md:text-4xl font-light italic leading-relaxed text-white mb-8">
+              "Réinventer la créativité, <br/>
+              <span className="text-accent-green font-normal">réhumaniser l'IA.</span>"
+            </p>
+            <div className="w-20 h-1 bg-white/20 mb-8"></div>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Créer un espace de convergence où la technologie ne remplace pas l'humain, mais amplifie son potentiel émotionnel et créatif.
             </p>
           </div>
+          
           <div className="space-y-6">
-            <div className="glass-panel p-6">
-              <h3 className="text-accent-gold text-sm font-display mb-2">RÉTROSPECTIVE 2025</h3>
-              <div className="flex justify-between items-end mb-2">
-                <span className="text-3xl font-bold">1 974</span>
-                <span className="text-sm text-gray-400">Billets vendus</span>
-              </div>
-              <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden">
-                <div className="bg-accent-gold h-full w-[98%]"></div>
-              </div>
-              <p className="text-sm text-gray-400 mt-4">
-                ⚠️ Pic de 987 ventes en 24h. Une urgence efficace mais risquée pour la trésorerie.
-              </p>
-            </div>
-
-            <div className="glass-panel p-6">
-              <h3 className="text-accent-purple text-sm font-display mb-4">OBJECTIFS 2026</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent-purple rounded-full"></div>
-                  <span><strong>1 000 billets</strong> avec répartition lissée</span>
+            <div className="glass-panel p-8">
+              <h3 className="text-accent-gold font-display tracking-widest mb-4">THÉMATIQUE 2026</h3>
+              <h2 className="text-4xl font-bold text-white mb-6">À ÉCHELLE HUMAINE</h2>
+              <ul className="space-y-6">
+                <li className="flex gap-4">
+                  <span className="text-accent-purple font-bold text-xl">01</span>
+                  <div>
+                    <h4 className="font-bold text-white">EXPÉRIMENTATION</h4>
+                    <p className="text-sm text-gray-400">Des ateliers "hands-on" pour toucher, tester et casser les codes.</p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent-green rounded-full"></div>
-                  <span><strong>Trésorerie saine</strong> (50% ventes en déc.)</span>
+                <li className="flex gap-4">
+                  <span className="text-accent-green font-bold text-xl">02</span>
+                  <div>
+                    <h4 className="font-bold text-white">CONNEXION</h4>
+                    <p className="text-sm text-gray-400">Un networking qualitatif favorisant les échanges réels.</p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent-gold rounded-full"></div>
-                  <span><strong>Communauté engagée</strong> toute l'année</span>
+                <li className="flex gap-4">
+                  <span className="text-accent-gold font-bold text-xl">03</span>
+                  <div>
+                    <h4 className="font-bold text-white">INSPIRATION</h4>
+                    <p className="text-sm text-gray-400">Des keynotes visionnaires ancrées dans la réalité du marché.</p>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -138,44 +135,62 @@ export default function Home() {
         </div>
       </Slide>
 
-      {/* SLIDE 3: ANALYSE VENTES */}
+      {/* SLIDE 3: ANALYSE & OBJECTIFS (Data Storytelling) */}
       <Slide isActive={currentSlide === 2} isPrev={currentSlide > 2}>
-        <div className="h-full flex flex-col justify-center">
-          <h2 className="text-4xl mb-8">Analyse 2025 : <span className="text-red-400">Le Pic de Dernière Minute</span></h2>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div className="glass-panel p-6 col-span-2">
-              <h3 className="text-sm font-display text-gray-400 mb-6">TOP 5 JOURS DE VENTE</h3>
-              <div className="space-y-4">
-                {[
-                  { date: "24 fév", count: 161, percent: "100%" },
-                  { date: "20 fév", count: 156, percent: "96%" },
-                  { date: "25 fév", count: 111, percent: "68%" },
-                  { date: "17 fév", count: 105, percent: "65%" },
-                  { date: "21 fév", count: 77, percent: "47%" },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    <span className="w-16 text-sm text-gray-400">{item.date}</span>
-                    <div className="flex-1 bg-white/5 h-8 rounded-sm overflow-hidden relative">
-                      <div 
-                        className="bg-gradient-to-r from-accent-purple to-blue-500 h-full absolute top-0 left-0 flex items-center px-3"
-                        style={{ width: item.percent }}
-                      >
-                        <span className="text-xs font-bold text-white">{item.count}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+        <div className="grid md:grid-cols-2 gap-12 h-full items-center">
+          <div>
+            <h2 className="text-4xl mb-8">Analyse 2025 : <br/><span className="text-red-400">Le Pic de Dernière Minute</span></h2>
+            <div className="glass-panel p-8 mb-8">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="text-5xl font-bold text-accent-gold">50%</div>
+                <div className="text-gray-300 leading-tight">des ventes totales réalisées<br/>en seulement 6 jours.</div>
               </div>
-            </div>
-            
-            <div className="glass-panel p-6 flex flex-col justify-center items-center text-center">
-              <div className="text-6xl font-bold text-accent-gold mb-2">50%</div>
-              <p className="text-gray-300 mb-6">des ventes totales en seulement 6 jours</p>
-              <div className="w-full h-px bg-white/10 mb-6"></div>
-              <p className="text-sm text-gray-400">
-                Cette dépendance à l'urgence crée une instabilité logistique et financière que nous devons corriger.
+              <div className="space-y-3">
+                <div className="flex items-center gap-4 text-sm text-gray-400">
+                  <span className="w-16">24 fév</span>
+                  <div className="flex-1 bg-white/5 h-2 rounded-full overflow-hidden"><div className="bg-red-400 h-full w-full"></div></div>
+                  <span className="text-white">161</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-gray-400">
+                  <span className="w-16">20 fév</span>
+                  <div className="flex-1 bg-white/5 h-2 rounded-full overflow-hidden"><div className="bg-red-400 h-full w-[96%]"></div></div>
+                  <span className="text-white">156</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-gray-400">
+                  <span className="w-16">25 fév</span>
+                  <div className="flex-1 bg-white/5 h-2 rounded-full overflow-hidden"><div className="bg-red-400 h-full w-[68%]"></div></div>
+                  <span className="text-white">111</span>
+                </div>
+              </div>
+              <p className="mt-6 text-sm text-gray-400 italic border-l-2 border-red-400 pl-4">
+                "Ce pic tardif crée une tension extrême sur la trésorerie et la logistique. Il faut lisser la courbe."
               </p>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <h2 className="text-4xl mb-8 text-right">Objectifs 2026</h2>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="glass-panel p-6 text-center group hover:bg-white/5 transition-colors">
+                <div className="text-accent-purple text-3xl font-bold mb-2 group-hover:scale-110 transition-transform">1000</div>
+                <div className="text-xs font-display tracking-widest text-gray-400">BILLETS VENDUS</div>
+                <div className="text-xs text-green-400 mt-2">+66% vs 2025</div>
+              </div>
+              <div className="glass-panel p-6 text-center group hover:bg-white/5 transition-colors">
+                <div className="text-accent-green text-3xl font-bold mb-2 group-hover:scale-110 transition-transform">+50%</div>
+                <div className="text-xs font-display tracking-widest text-gray-400">PORTÉE MÉDIA</div>
+                <div className="text-xs text-gray-500 mt-2">Notoriété Brand</div>
+              </div>
+              <div className="glass-panel p-6 text-center group hover:bg-white/5 transition-colors">
+                <div className="text-accent-gold text-3xl font-bold mb-2 group-hover:scale-110 transition-transform">&gt;70</div>
+                <div className="text-xs font-display tracking-widest text-gray-400">SCORE NPS</div>
+                <div className="text-xs text-gray-500 mt-2">Qualité Expérience</div>
+              </div>
+              <div className="glass-panel p-6 text-center group hover:bg-white/5 transition-colors">
+                <div className="text-white text-3xl font-bold mb-2 group-hover:scale-110 transition-transform">50%</div>
+                <div className="text-xs font-display tracking-widest text-gray-400">VENTES DÉC.</div>
+                <div className="text-xs text-green-400 mt-2">Sécurité Cashflow</div>
+              </div>
             </div>
           </div>
         </div>
