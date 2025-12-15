@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import SalesChart from "@/components/SalesChart";
 
 export default function Analysis() {
   return (
@@ -47,6 +48,8 @@ export default function Analysis() {
                   </TableRow>
                 </TableBody>
               </Table>
+              
+              <SalesChart />
             </div>
           </div>
           
