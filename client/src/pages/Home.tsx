@@ -213,6 +213,63 @@ export default function Home() {
         </div>
       </Slide>
 
+      {/* SLIDE 4: TARIFICATION */}
+      <Slide isActive={currentSlide === 3} isPrev={currentSlide > 3}>
+        <h2 className="text-4xl mb-12">Stratégie de Tarification <span className="text-accent-purple">Narrative</span></h2>
+        
+        <div className="grid md:grid-cols-3 gap-6">
+          {/* Phase 1 */}
+          <div className="glass-panel p-8 border-t-4 border-t-accent-purple relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+            <div className="absolute top-4 right-4 text-xs font-display text-gray-500">PHASE 1</div>
+            <h3 className="text-2xl font-bold mb-2 text-white">Les Pionniers</h3>
+            <div className="text-4xl font-bold text-accent-purple mb-4">-50%</div>
+            <p className="text-sm text-gray-400 mb-6">Jusqu'au 31 déc. 2025</p>
+            <div className="bg-white/5 p-4 rounded text-sm italic text-gray-300">
+              "Rejoignez le cercle des premiers. Façonnez l'événement."
+            </div>
+          </div>
+
+          {/* Phase 2 */}
+          <div className="glass-panel p-8 border-t-4 border-t-accent-green relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+            <div className="absolute top-4 right-4 text-xs font-display text-gray-500">PHASE 2</div>
+            <h3 className="text-2xl font-bold mb-2 text-white">Les Bâtisseurs</h3>
+            <div className="text-4xl font-bold text-accent-green mb-4">-30%</div>
+            <p className="text-sm text-gray-400 mb-6">1er - 17 jan. 2026</p>
+            <div className="bg-white/5 p-4 rounded text-sm italic text-gray-300">
+              "L'élan est créé. Construisez avec nous."
+            </div>
+          </div>
+
+          {/* Phase 3 */}
+          <div className="glass-panel p-8 border-t-4 border-t-accent-gold relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+            <div className="absolute top-4 right-4 text-xs font-display text-gray-500">PHASE 3</div>
+            <h3 className="text-2xl font-bold mb-2 text-white">Les Décideurs</h3>
+            <div className="text-4xl font-bold text-accent-gold mb-4">-20%</div>
+            <p className="text-sm text-gray-400 mb-6">18 - 31 jan. 2026</p>
+            <div className="bg-white/5 p-4 rounded text-sm italic text-gray-300">
+              "Le programme est là. Prenez votre place."
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 grid md:grid-cols-2 gap-6">
+          <div className="glass-panel p-6 flex items-center gap-4">
+            <div className="bg-accent-purple/20 p-3 rounded-full text-accent-purple font-bold">1+1</div>
+            <div>
+              <h4 className="font-bold">Offre Duo Ambassadeur</h4>
+              <p className="text-sm text-gray-400">Invitez un collègue à moitié prix (Anciens participants)</p>
+            </div>
+          </div>
+          <div className="glass-panel p-6 flex items-center gap-4">
+            <div className="bg-accent-green/20 p-3 rounded-full text-accent-green font-bold">VIP</div>
+            <div>
+              <h4 className="font-bold">Codes Partenaires</h4>
+              <p className="text-sm text-gray-400">Valeur exclusive pour les communautés (E180, etc.)</p>
+            </div>
+          </div>
+        </div>
+      </Slide>
+
       {/* SLIDE 9: SCOPE OF WORK */}
       <Slide isActive={currentSlide === 8} isPrev={currentSlide > 8}>
         <h2 className="text-4xl mb-12">Notre Périmètre d'Intervention</h2>
@@ -320,58 +377,45 @@ export default function Home() {
 
       {/* SLIDE 12: MESURE (Moved) */}
       <Slide isActive={currentSlide === 11} isPrev={currentSlide > 11}>
-        <h2 className="text-4xl mb-12">Mesure du Succès</h2>rification <span className="text-accent-purple">Narrative</span></h2>
-        
-        <div className="grid md:grid-cols-3 gap-6">
-          {/* Phase 1 */}
-          <div className="glass-panel p-8 border-t-4 border-t-accent-purple relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-            <div className="absolute top-4 right-4 text-xs font-display text-gray-500">PHASE 1</div>
-            <h3 className="text-2xl font-bold mb-2 text-white">Les Pionniers</h3>
-            <div className="text-4xl font-bold text-accent-purple mb-4">-50%</div>
-            <p className="text-sm text-gray-400 mb-6">Jusqu'au 31 déc. 2025</p>
-            <div className="bg-white/5 p-4 rounded text-sm italic text-gray-300">
-              "Rejoignez le cercle des premiers. Façonnez l'événement."
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl mb-12">Mesurer le Succès</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="glass-panel p-8">
+              <div className="text-4xl font-bold text-accent-purple mb-2">50%</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wider">Conversion Early Bird</div>
+            </div>
+            <div className="glass-panel p-8">
+              <div className="text-4xl font-bold text-accent-green mb-2">&lt; 15$</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wider">Coût par Acquisition</div>
+            </div>
+            <div className="glass-panel p-8">
+              <div className="text-4xl font-bold text-accent-gold mb-2">70+</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wider">Net Promoter Score</div>
             </div>
           </div>
 
-          {/* Phase 2 */}
-          <div className="glass-panel p-8 border-t-4 border-t-accent-green relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-            <div className="absolute top-4 right-4 text-xs font-display text-gray-500">PHASE 2</div>
-            <h3 className="text-2xl font-bold mb-2 text-white">Les Bâtisseurs</h3>
-            <div className="text-4xl font-bold text-accent-green mb-4">-30%</div>
-            <p className="text-sm text-gray-400 mb-6">1er - 17 jan. 2026</p>
-            <div className="bg-white/5 p-4 rounded text-sm italic text-gray-300">
-              "L'élan est créé. Construisez avec nous."
+          <div className="glass-panel p-10 mb-12 text-left">
+            <h3 className="text-xl font-bold mb-6">Prochaines Étapes</h3>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold">1</div>
+                <p>Finaliser la refonte du site web (Machine de conversion)</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold">2</div>
+                <p>Lancer la campagne "Pionniers" (-50%)</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold">3</div>
+                <p>Déployer le tracking (Pixels & UTMs)</p>
+              </div>
             </div>
           </div>
 
-          {/* Phase 3 */}
-          <div className="glass-panel p-8 border-t-4 border-t-accent-gold relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
-            <div className="absolute top-4 right-4 text-xs font-display text-gray-500">PHASE 3</div>
-            <h3 className="text-2xl font-bold mb-2 text-white">Les Décideurs</h3>
-            <div className="text-4xl font-bold text-accent-gold mb-4">-20%</div>
-            <p className="text-sm text-gray-400 mb-6">18 - 31 jan. 2026</p>
-            <div className="bg-white/5 p-4 rounded text-sm italic text-gray-300">
-              "Le programme est là. Prenez votre place."
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 grid md:grid-cols-2 gap-6">
-          <div className="glass-panel p-6 flex items-center gap-4">
-            <div className="bg-accent-purple/20 p-3 rounded-full text-accent-purple font-bold">1+1</div>
-            <div>
-              <h4 className="font-bold">Offre Duo Ambassadeur</h4>
-              <p className="text-sm text-gray-400">Invitez un collègue à moitié prix (Anciens participants)</p>
-            </div>
-          </div>
-          <div className="glass-panel p-6 flex items-center gap-4">
-            <div className="bg-accent-green/20 p-3 rounded-full text-accent-green font-bold">VIP</div>
-            <div>
-              <h4 className="font-bold">Codes Partenaires</h4>
-              <p className="text-sm text-gray-400">Valeur exclusive pour les communautés (E180, etc.)</p>
-            </div>
-          </div>
+          <p className="text-2xl font-light italic text-gray-300">
+            "Ensemble, faisons de Entertain-AI 2026 une institution."
+          </p>
         </div>
       </Slide>
 
@@ -572,50 +616,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
-      </Slide>
-
-      {/* SLIDE 9: MESURE & CONCLUSION */}
-      <Slide isActive={currentSlide === 8} isPrev={currentSlide > 8}>
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl mb-12">Mesurer le Succès</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="glass-panel p-8">
-              <div className="text-4xl font-bold text-accent-purple mb-2">50%</div>
-              <div className="text-sm text-gray-400 uppercase tracking-wider">Conversion Early Bird</div>
-            </div>
-            <div className="glass-panel p-8">
-              <div className="text-4xl font-bold text-accent-green mb-2">&lt; 15$</div>
-              <div className="text-sm text-gray-400 uppercase tracking-wider">Coût par Acquisition</div>
-            </div>
-            <div className="glass-panel p-8">
-              <div className="text-4xl font-bold text-accent-gold mb-2">70+</div>
-              <div className="text-sm text-gray-400 uppercase tracking-wider">Net Promoter Score</div>
-            </div>
-          </div>
-
-          <div className="glass-panel p-10 mb-12 text-left">
-            <h3 className="text-xl font-bold mb-6">Prochaines Étapes</h3>
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold">1</div>
-                <p>Finaliser la refonte du site web (Machine de conversion)</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold">2</div>
-                <p>Lancer la campagne "Pionniers" (-50%)</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold">3</div>
-                <p>Déployer le tracking (Pixels & UTMs)</p>
-              </div>
-            </div>
-          </div>
-
-          <p className="text-2xl font-light italic text-gray-300">
-            "Ensemble, faisons de Entertain-AI 2026 une institution."
-          </p>
         </div>
       </Slide>
     </div>
