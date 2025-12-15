@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 7;
+  const totalSlides = 9; // Increased for more detailed content
 
   const nextSlide = () => {
     if (currentSlide < totalSlides - 1) setCurrentSlide(curr => curr + 1);
@@ -238,7 +238,7 @@ export default function Home() {
         </div>
       </Slide>
 
-      {/* SLIDE 5: PLAN MÉDIA */}
+      {/* SLIDE 5: PLAN MÉDIA - BUDGET */}
       <Slide isActive={currentSlide === 4} isPrev={currentSlide > 4}>
         <div className="grid md:grid-cols-2 gap-12 h-full items-center">
           <div>
@@ -359,8 +359,87 @@ export default function Home() {
         </div>
       </Slide>
 
-      {/* SLIDE 7: MESURE & CONCLUSION */}
+      {/* SLIDE 7: PERSONAS & CIBLAGE (NEW) */}
       <Slide isActive={currentSlide === 6} isPrev={currentSlide > 6}>
+        <h2 className="text-4xl mb-12">Ciblage : <span className="text-accent-purple">Nos 3 Piliers</span></h2>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="glass-panel p-8 border-t-4 border-t-accent-purple">
+            <div className="w-12 h-12 bg-accent-purple/20 rounded-full flex items-center justify-center mb-6">
+              <span className="text-2xl">🎨</span>
+            </div>
+            <h3 className="text-xl font-bold mb-2">Les Créatifs Tech</h3>
+            <p className="text-sm text-gray-400 mb-4">Directeurs artistiques, Designers, Motion Designers.</p>
+            <ul className="text-sm space-y-2 text-gray-300">
+              <li>• Cherchent l'inspiration</li>
+              <li>• Veulent maîtriser les nouveaux outils</li>
+              <li>• Canaux : Instagram, Behance</li>
+            </ul>
+          </div>
+
+          <div className="glass-panel p-8 border-t-4 border-t-accent-green">
+            <div className="w-12 h-12 bg-accent-green/20 rounded-full flex items-center justify-center mb-6">
+              <span className="text-2xl">💼</span>
+            </div>
+            <h3 className="text-xl font-bold mb-2">Les Décideurs</h3>
+            <p className="text-sm text-gray-400 mb-4">Chefs d'entreprise, Directeurs d'agence, CTOs.</p>
+            <ul className="text-sm space-y-2 text-gray-300">
+              <li>• Cherchent le ROI et l'efficacité</li>
+              <li>• Veulent réseauter</li>
+              <li>• Canaux : LinkedIn, Email</li>
+            </ul>
+          </div>
+
+          <div className="glass-panel p-8 border-t-4 border-t-accent-gold">
+            <div className="w-12 h-12 bg-accent-gold/20 rounded-full flex items-center justify-center mb-6">
+              <span className="text-2xl">🚀</span>
+            </div>
+            <h3 className="text-xl font-bold mb-2">Les Innovateurs</h3>
+            <p className="text-sm text-gray-400 mb-4">Développeurs IA, Chercheurs, Startups.</p>
+            <ul className="text-sm space-y-2 text-gray-300">
+              <li>• Cherchent la technique</li>
+              <li>• Veulent voir le futur</li>
+              <li>• Canaux : Twitter/X, Discord</li>
+            </ul>
+          </div>
+        </div>
+      </Slide>
+
+      {/* SLIDE 8: RISQUES & MITIGATION (NEW) */}
+      <Slide isActive={currentSlide === 7} isPrev={currentSlide > 7}>
+        <h2 className="text-4xl mb-12">Gestion des Risques</h2>
+        
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="glass-panel p-8">
+            <h3 className="text-xl font-bold text-red-400 mb-4">Risque 1 : Saturation des Canaux</h3>
+            <p className="text-gray-300 mb-4">
+              Le bruit médiatique autour de l'IA est immense. Risque de noyade du message.
+            </p>
+            <div className="bg-white/5 p-4 rounded border-l-2 border-accent-green">
+              <h4 className="font-bold text-accent-green text-sm mb-1">MITIGATION</h4>
+              <p className="text-sm text-gray-400">
+                Focus sur la niche "Créative" et l'humain. Ne pas parler de "tech" générique, mais d'usage concret et d'émotion.
+              </p>
+            </div>
+          </div>
+
+          <div className="glass-panel p-8">
+            <h3 className="text-xl font-bold text-red-400 mb-4">Risque 2 : Fatigue "Early Bird"</h3>
+            <p className="text-gray-300 mb-4">
+              Si la phase 1 ne convertit pas assez, la pression sur janvier augmente.
+            </p>
+            <div className="bg-white/5 p-4 rounded border-l-2 border-accent-green">
+              <h4 className="font-bold text-accent-green text-sm mb-1">MITIGATION</h4>
+              <p className="text-sm text-gray-400">
+                Activation agressive de la base de données 2025 (Emailing personnalisé) dès le jour 1. Le "1+1" est notre filet de sécurité.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Slide>
+
+      {/* SLIDE 9: MESURE & CONCLUSION */}
+      <Slide isActive={currentSlide === 8} isPrev={currentSlide > 8}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl mb-12">Mesurer le Succès</h2>
           
