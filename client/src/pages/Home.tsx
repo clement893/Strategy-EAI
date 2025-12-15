@@ -7,7 +7,7 @@ import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "rec
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 12; // Increased for Scope, Roadmap, Budget
+  const totalSlides = 13; // Increased for Analysis split
   const scrollTimeoutRef = useRef<number | null>(null);
 
   const nextSlide = useCallback(() => {
@@ -112,11 +112,8 @@ export default function Home() {
 
       <div className="fixed bottom-8 left-8 z-50">
         <img src="/Nukleo_blanc_RVB.png" alt="Nukleo" className="h-6 opacity-80" />
-      </div>
-
-      {/* SLIDE 1: COVER */}
-      <Slide isActive={currentSlide === 0} isPrev={currentSlide > 0} backgroundImage="/audience-moment.jpg">
-        <div className="max-w-4xl">
+      </di      {/* SLIDE 13: CLOSING */}
+      <Slide isActive={currentSlide === 12} isPrev={currentSlide > 12} backgroundImage="/audience-moment.jpg">        <div className="max-w-4xl">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
             <span className="text-gradient">Entertain-AI</span> <span className="text-accent-purple">2026</span>
           </h1>
@@ -178,78 +175,79 @@ export default function Home() {
         </div>
       </Slide>
 
-      {/* SLIDE 3: ANALYSE & OBJECTIFS (Data Storytelling) */}
-      <Slide isActive={currentSlide === 2} isPrev={currentSlide > 2}>
-        <div className="grid md:grid-cols-2 gap-12 h-full items-center">
-          <div>
-            <h2 className="text-4xl mb-8">Analyse 2025 : <br/><span className="text-red-400">Le Pic de Dernière Minute</span></h2>
-            <div className="glass-panel p-6 mb-8">
-              <div className="h-64 w-full mb-4">
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart
-                    data={[
-                      { date: 'Jan 1', sales: 5 }, { date: 'Jan 15', sales: 12 }, { date: 'Feb 1', sales: 25 },
-                      { date: 'Feb 10', sales: 45 }, { date: 'Feb 15', sales: 80 }, { date: 'Feb 20', sales: 156 },
-                      { date: 'Feb 24', sales: 161 }, { date: 'Feb 25', sales: 111 }, { date: 'Feb 26', sales: 40 }
-                    ]}
-                  >
-                    <defs>
-                      <linearGradient id="colorSales" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#ef4444" stopOpacity={0.8}/>
-                        <stop offset="95%" stopColor="#ef4444" stopOpacity={0}/>
-                      </linearGradient>
-                    </defs>
-                    <XAxis dataKey="date" stroke="#666" tick={{fill: '#666'}} />
-                    <YAxis stroke="#666" tick={{fill: '#666'}} />
-                    <Tooltip 
-                      contentStyle={{ backgroundColor: '#1a1a1a', border: '1px solid #333' }}
-                      itemStyle={{ color: '#fff' }}
-                    />
-                    <Area type="monotone" dataKey="sales" stroke="#ef4444" fillOpacity={1} fill="url(#colorSales)" />
-                  </AreaChart>
-                </ResponsiveContainer>
+      {/* SLIDE 3: ANALYSE 2025 (Data Storytelling) */}
+      <Slide isActive={currentSlide === 2} isPrev={currentSlide > 2} backgroundImage="/Fond_minimalistes_1.png">
+        <div className="h-full flex flex-col justify-center items-center">
+          <h2 className="text-5xl mb-12 text-center">Analyse 2025 : <br/><span className="text-red-400">Le Pic de Dernière Minute</span></h2>
+          <div className="glass-panel p-10 w-full max-w-5xl">
+            <div className="h-96 w-full mb-8">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart
+                  data={[
+                    { date: 'Jan 1', sales: 5 }, { date: 'Jan 15', sales: 12 }, { date: 'Feb 1', sales: 25 },
+                    { date: 'Feb 10', sales: 45 }, { date: 'Feb 15', sales: 80 }, { date: 'Feb 20', sales: 156 },
+                    { date: 'Feb 24', sales: 161 }, { date: 'Feb 25', sales: 111 }, { date: 'Feb 26', sales: 40 }
+                  ]}
+                >
+                  <defs>
+                    <linearGradient id="colorSales" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#ef4444" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#ef4444" stopOpacity={0}/>
+                    </linearGradient>
+                  </defs>
+                  <XAxis dataKey="date" stroke="#999" tick={{fill: '#999'}} />
+                  <YAxis stroke="#999" tick={{fill: '#999'}} />
+                  <Tooltip 
+                    contentStyle={{ backgroundColor: '#1a1a1a', border: '1px solid #333' }}
+                    itemStyle={{ color: '#fff' }}
+                  />
+                  <Area type="monotone" dataKey="sales" stroke="#ef4444" strokeWidth={3} fillOpacity={1} fill="url(#colorSales)" />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="flex items-center justify-center gap-12">
+              <div className="flex items-center gap-4">
+                <div className="text-6xl font-bold text-accent-gold">50%</div>
+                <div className="text-xl text-gray-300 leading-tight">des ventes totales réalisées<br/>en seulement 6 jours.</div>
               </div>
-              <div className="flex items-center gap-4 mb-2">
-                <div className="text-5xl font-bold text-accent-gold">50%</div>
-                <div className="text-gray-300 leading-tight">des ventes totales réalisées<br/>en seulement 6 jours.</div>
-              </div>
-              <p className="mt-4 text-sm text-gray-400 italic border-l-2 border-red-400 pl-4">
+              <div className="h-16 w-px bg-white/20"></div>
+              <p className="text-lg text-gray-300 italic max-w-md">
                 "Ce pic tardif crée une tension extrême sur la trésorerie et la logistique. Il faut lisser la courbe."
               </p>
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <h2 className="text-4xl mb-8 text-right">Objectifs 2026</h2>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="glass-panel p-6 text-center group hover:bg-white/5 transition-colors">
-                <div className="text-accent-purple text-3xl font-bold mb-2 group-hover:scale-110 transition-transform">1000</div>
-                <div className="text-xs font-display tracking-widest text-gray-400">BILLETS VENDUS</div>
-                <div className="text-xs text-green-400 mt-2">+66% vs 2025</div>
-              </div>
-              <div className="glass-panel p-6 text-center group hover:bg-white/5 transition-colors">
-                <div className="text-accent-green text-3xl font-bold mb-2 group-hover:scale-110 transition-transform">+50%</div>
-                <div className="text-xs font-display tracking-widest text-gray-400">PORTÉE MÉDIA</div>
-                <div className="text-xs text-gray-500 mt-2">Notoriété Brand</div>
-              </div>
-              <div className="glass-panel p-6 text-center group hover:bg-white/5 transition-colors">
-                <div className="text-accent-gold text-3xl font-bold mb-2 group-hover:scale-110 transition-transform">&gt;70</div>
-                <div className="text-xs font-display tracking-widest text-gray-400">SCORE NPS</div>
-                <div className="text-xs text-gray-500 mt-2">Qualité Expérience</div>
-              </div>
-              <div className="glass-panel p-6 text-center group hover:bg-white/5 transition-colors">
-                <div className="text-white text-3xl font-bold mb-2 group-hover:scale-110 transition-transform">50%</div>
-                <div className="text-xs font-display tracking-widest text-gray-400">VENTES DÉC.</div>
-                <div className="text-xs text-green-400 mt-2">Sécurité Cashflow</div>
-              </div>
             </div>
           </div>
         </div>
       </Slide>
 
-      {/* SLIDE 4: TARIFICATION */}
-      <Slide isActive={currentSlide === 3} isPrev={currentSlide > 3}>
-        <h2 className="text-4xl mb-12">Stratégie de Tarification <span className="text-accent-purple">Narrative</span></h2>
+      {/* SLIDE 4: OBJECTIFS 2026 */}
+      <Slide isActive={currentSlide === 3} isPrev={currentSlide > 3} backgroundImage="/Fond_minimalistes_2.png">
+        <div className="h-full flex flex-col justify-center">
+          <h2 className="text-5xl mb-16 text-center">Objectifs 2026</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto w-full">
+            <div className="glass-panel p-8 text-center group hover:bg-white/5 transition-colors transform hover:-translate-y-2 duration-300">
+              <div className="text-accent-purple text-5xl font-bold mb-4 group-hover:scale-110 transition-transform">1000</div>
+              <div className="text-sm font-display tracking-widest text-gray-400 uppercase">Billets Vendus</div>
+              <div className="text-sm text-green-400 mt-4 font-bold">+66% vs 2025</div>
+            </div>
+            <div className="glass-panel p-8 text-center group hover:bg-white/5 transition-colors transform hover:-translate-y-2 duration-300">
+              <div className="text-accent-green text-5xl font-bold mb-4 group-hover:scale-110 transition-transform">+50%</div>
+              <div className="text-sm font-display tracking-widest text-gray-400 uppercase">Portée Média</div>
+              <div className="text-sm text-gray-500 mt-4">Notoriété Brand</div>
+            </div>
+            <div className="glass-panel p-8 text-center group hover:bg-white/5 transition-colors transform hover:-translate-y-2 duration-300">
+              <div className="text-accent-gold text-5xl font-bold mb-4 group-hover:scale-110 transition-transform">&gt;70</div>
+              <div className="text-sm font-display tracking-widest text-gray-400 uppercase">Score NPS</div>
+              <div className="text-sm text-gray-500 mt-4">Qualité Expérience</div>
+            </div>
+            <div className="glass-panel p-8 text-center group hover:bg-white/5 transition-colors transform hover:-translate-y-2 duration-300">
+              <div className="text-white text-5xl font-bold mb-4 group-hover:scale-110 transition-transform">50%</div>
+              <div className="text-sm font-display tracking-widest text-gray-400 uppercase">Ventes Déc.</div>
+              <div className="text-sm text-green-400 mt-4 font-bold">Sécurité Cashflow</div>
+            </div>
+          </div>
+        </div>
+      </Sli      {/* SLIDE 7: ORCHESTRATION BUDGÉTAIRE */}
+      <Slide isActive={currentSlide === 6} isPrev={currentSlide > 6} backgroundImage="/Fond_minimalistes_5.png">backgroundImage="/Fond_minimalistes_3.png">  <h2 className="text-4xl mb-12">Stratégie de Tarification <span className="text-accent-purple">Narrative</span></h2>
         
         <div className="grid md:grid-cols-3 gap-6">
           {/* Phase 1 */}
@@ -305,7 +303,7 @@ export default function Home() {
       </Slide>
 
       {/* SLIDE 9: SCOPE OF WORK */}
-      <Slide isActive={currentSlide === 8} isPrev={currentSlide > 8}>
+      <Slide isActive={currentSlide === 8} isPrev={currentSlide > 8} backgroundImage="/Fond_minimalistes_7.png">
         <h2 className="text-4xl mb-12">Notre Périmètre d'Intervention</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="glass-panel p-8">
@@ -345,8 +343,8 @@ export default function Home() {
         </div>
       </Slide>
 
-      {/* SLIDE 10: ROADMAP */}
-      <Slide isActive={currentSlide === 9} isPrev={currentSlide > 9}>
+       {/* SLIDE 10: ROADMAP */}
+      <Slide isActive={currentSlide === 9} isPrev={currentSlide > 9} backgroundImage="/Fond_minimalistes_8.png">
         <h2 className="text-4xl mb-12">Roadmap Opérationnelle</h2>
         <div className="relative border-l-2 border-white/10 ml-4 space-y-12">
           <div className="relative pl-8">
@@ -370,10 +368,8 @@ export default function Home() {
             <p className="text-gray-400">A/B testing des créas, ajustement des budgets par canal, reporting hebdo.</p>
           </div>
         </div>
-      </Slide>
-
-      {/* SLIDE 11: BUDGET */}
-      <Slide isActive={currentSlide === 10} isPrev={currentSlide > 10}>
+           {/* SLIDE 12: MESURE & CONCLUSION */}
+      <Slide isActive={currentSlide === 11} isPrev={currentSlide > 11} backgroundImage="/Fond_minimalistes_2.png">backgroundImage="/Fond_minimalistes_1.png">
         <h2 className="text-4xl mb-12">Investissement Global</h2>
         <div className="grid md:grid-cols-2 gap-12">
           <div className="glass-panel p-8 flex flex-col justify-between border border-white/10">
@@ -453,8 +449,8 @@ export default function Home() {
         </div>
       </Slide>
 
-      {/* SLIDE 5: PLAN MÉDIA - BUDGET */}
-      <Slide isActive={currentSlide === 4} isPrev={currentSlide > 4}>
+            {/* SLIDE 6: PLAN MÉDIA */}
+      <Slide isActive={currentSlide === 5} isPrev={currentSlide > 5} backgroundImage="/Fond_minimalistes_4.png">4}>
         <div className="grid md:grid-cols-2 gap-12 h-full items-center">
           <div>
             <h2 className="text-4xl mb-8">Plan Média : <br/><span className="text-accent-gold">Orchestration du Budget</span></h2>
@@ -519,11 +515,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </Slide>
-
-      {/* SLIDE 6: CRÉATIFS */}
-      <Slide isActive={currentSlide === 5} isPrev={currentSlide > 5}>
-        <h2 className="text-4xl mb-12">Symphonie Créative : <span className="text-white">Tech & Humain</span></h2>
+      </Slide      {/* SLIDE 8: MATRICE CRÉATIVE */}
+      <Slide isActive={currentSlide === 7} isPrev={currentSlide > 7} backgroundImage="/Fond_minimalistes_6.png">    <h2 className="text-4xl mb-12">Symphonie Créative : <span className="text-white">Tech & Humain</span></h2>
         
         <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-4">
