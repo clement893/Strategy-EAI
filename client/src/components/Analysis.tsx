@@ -11,7 +11,7 @@ export default function Analysis() {
             <h2 className="text-5xl font-sans font-bold mb-4">01</h2>
             <h3 className="text-4xl font-serif italic mb-8">Analyse de la situation</h3>
             <p className="text-white/60 leading-relaxed mb-8">
-              L'édition 2025 a été un succès financier mais a révélé une fragilité structurelle majeure : une dépendance critique aux ventes de dernière minute.
+              L'édition 2025 a permis de valider le marché mais a révélé une fragilité structurelle majeure : une dépendance critique aux ventes de dernière minute qui a mis à risque la rentabilité finale.
             </p>
             
             <div className="bg-white/5 border border-white/10 p-6 rounded-lg">

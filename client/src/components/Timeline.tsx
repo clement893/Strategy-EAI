@@ -33,9 +33,9 @@ export default function Timeline() {
       desc: "Dernier push média avant l'événement."
     },
     {
-      date: "28 Février",
-      title: "Clôture des Ventes",
-      desc: "Fin de la campagne marketing."
+      date: "18-19 Février 2026",
+      title: "Entertain-AI 2026",
+      desc: "L'événement principal. Clôture des ventes sur place."
     }
   ];
 
@@ -46,7 +46,7 @@ export default function Timeline() {
           <h2 className="text-5xl font-sans font-bold mb-4">06</h2>
           <h3 className="text-4xl font-serif italic">Timeline de Déploiement</h3>
           <p className="text-white/60 mt-4 max-w-2xl mx-auto">
-            Un calendrier d'exécution précis pour orchestrer la montée en puissance de la campagne.
+            Un calendrier d'exécution précis menant jusqu'aux dates officielles de l'événement : 18 et 19 Février 2026.
           </p>
         </div>
 
@@ -66,13 +66,13 @@ export default function Timeline() {
               >
                 <div className="w-5/12" />
                 
-                <div className="z-10 flex items-center justify-center w-8 h-8 rounded-full bg-background border border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-                  <div className="w-2 h-2 bg-white rounded-full" />
+                <div className={`z-10 flex items-center justify-center w-8 h-8 rounded-full border border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.1)] ${index === steps.length - 1 ? 'bg-white' : 'bg-background'}`}>
+                  <div className={`w-2 h-2 rounded-full ${index === steps.length - 1 ? 'bg-background' : 'bg-white'}`} />
                 </div>
                 
                 <div className={`w-5/12 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                  <span className="text-xs font-sans uppercase tracking-widest text-white/50 block mb-1">{step.date}</span>
-                  <h4 className="text-xl font-serif italic mb-2">{step.title}</h4>
+                  <span className={`text-xs font-sans uppercase tracking-widest block mb-1 ${index === steps.length - 1 ? 'text-white font-bold' : 'text-white/50'}`}>{step.date}</span>
+                  <h4 className={`text-xl font-serif italic mb-2 ${index === steps.length - 1 ? 'text-white' : ''}`}>{step.title}</h4>
                   <p className="text-sm text-white/60">{step.desc}</p>
                 </div>
               </motion.div>
