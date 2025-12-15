@@ -1,7 +1,7 @@
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 
 const data = [
-  { name: "La Presse", value: 15000, color: "#ffffff" },
+  { name: "La Presse (Stratégie Numérique)", value: 15000, color: "#ffffff" },
   { name: "LinkedIn Ads", value: 5000, color: "rgba(255,255,255,0.6)" },
   { name: "Meta Ads", value: 4000, color: "rgba(255,255,255,0.4)" },
   { name: "Google Ads", value: 4000, color: "rgba(255,255,255,0.2)" },
@@ -32,6 +32,13 @@ export default function Budget() {
                 <span className="font-serif italic text-xl">ROI Estimé</span>
                 <span className="font-sans font-bold text-2xl text-green-400">3,5:1</span>
               </div>
+            </div>
+            
+            <div className="mt-12 p-6 border border-white/10 bg-white/5 rounded-lg">
+              <h4 className="font-serif italic text-lg mb-2 text-white">Focus : La Presse</h4>
+              <p className="text-sm text-white/60 leading-relaxed">
+                Ce n'est pas une dépense média traditionnelle, mais un <span className="text-white font-bold">add-on stratégique focalisé sur le numérique</span>. Il vise à crédibiliser l'événement auprès des décideurs via un contenu de marque premium et une distribution ciblée.
+              </p>
             </div>
           </div>
 

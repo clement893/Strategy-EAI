@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export default function Analysis() {
   return (
@@ -9,9 +10,44 @@ export default function Analysis() {
           <div className="md:w-1/3">
             <h2 className="text-5xl font-sans font-bold mb-4">01</h2>
             <h3 className="text-4xl font-serif italic mb-8">Analyse de la situation</h3>
-            <p className="text-white/60 leading-relaxed">
+            <p className="text-white/60 leading-relaxed mb-8">
               L'édition 2025 a été un succès financier mais a révélé une fragilité structurelle majeure : une dépendance critique aux ventes de dernière minute.
             </p>
+            
+            <div className="bg-white/5 border border-white/10 p-6 rounded-lg">
+              <h4 className="font-sans text-xs uppercase tracking-widest text-white/50 mb-4">Distribution des ventes 2025</h4>
+              <Table>
+                <TableHeader>
+                  <TableRow className="border-white/10 hover:bg-transparent">
+                    <TableHead className="text-white/70 font-serif italic">Période</TableHead>
+                    <TableHead className="text-right text-white/70 font-serif italic">Billets</TableHead>
+                    <TableHead className="text-right text-white/70 font-serif italic">%</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow className="border-white/10 hover:bg-white/5">
+                    <TableCell className="font-sans text-sm">Décembre</TableCell>
+                    <TableCell className="text-right font-sans text-sm">12</TableCell>
+                    <TableCell className="text-right font-sans text-sm text-white/50">1.2%</TableCell>
+                  </TableRow>
+                  <TableRow className="border-white/10 hover:bg-white/5">
+                    <TableCell className="font-sans text-sm">Janvier</TableCell>
+                    <TableCell className="text-right font-sans text-sm">45</TableCell>
+                    <TableCell className="text-right font-sans text-sm text-white/50">4.6%</TableCell>
+                  </TableRow>
+                  <TableRow className="border-white/10 hover:bg-white/5 bg-white/10">
+                    <TableCell className="font-sans text-sm font-bold text-white">Février</TableCell>
+                    <TableCell className="text-right font-sans text-sm font-bold text-white">930</TableCell>
+                    <TableCell className="text-right font-sans text-sm font-bold text-white">94.2%</TableCell>
+                  </TableRow>
+                  <TableRow className="border-t border-white/20 hover:bg-transparent">
+                    <TableCell className="font-serif italic text-white">Total</TableCell>
+                    <TableCell className="text-right font-serif italic text-white">987</TableCell>
+                    <TableCell className="text-right font-serif italic text-white">100%</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </div>
           </div>
           
           <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
