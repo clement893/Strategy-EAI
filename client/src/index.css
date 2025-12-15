@@ -106,18 +106,18 @@
 
 :root {
   /* Cyber-Minimalism Palette */
-  --background: #0a0a0a;
+  --background: #050505;
   --foreground: #ffffff;
   
-  --card: #141414;
+  --card: #0a0a0a;
   --card-foreground: #ffffff;
   
-  --primary: #6600FF; /* Electric Purple */
+  --primary: #581c87; /* Electric Purple */
   --primary-foreground: #ffffff;
   
-  --accent-purple: #6600FF;
-  --accent-green: #00CC99;
-  --accent-gold: #F9AB00;
+  --accent-purple: #7e22ce;
+  --accent-green: #059669;
+  --accent-gold: #b45309;
   
   --border: #333333;
   --input: #333333;
