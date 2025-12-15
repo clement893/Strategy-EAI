@@ -4,185 +4,75 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'Lato', sans-serif;
-  --font-display: 'Electrolize', sans-serif;
-
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Georgia', 'Times New Roman', serif; /* Authority font */
   
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
+  --color-background: #ffffff;
+  --color-foreground: #0f172a; /* Slate 900 */
   
-  --color-accent-purple: var(--accent-purple);
-  --color-accent-green: var(--accent-green);
-  --color-accent-gold: var(--accent-gold);
+  --color-primary: #0f172a; /* Navy Blue - Authority */
+  --color-secondary: #475569; /* Slate 600 - Subtext */
   
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+  --color-accent: #b91c1c; /* Deep Red - Strategic Emphasis (Sparingly used) */
   
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+  --color-border: #e2e8f0;
 }
 
-/* Font Face Definitions */
-@font-face {
-  font-family: 'Lato';
-  src: url('/Lato-Thin.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('/Lato-ThinItalic.ttf') format('truetype');
-  font-weight: 100;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('/Lato-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('/Lato-LightItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('/Lato-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('/Lato-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('/Lato-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('/Lato-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('/Lato-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('/Lato-BlackItalic.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Electrolize';
-  src: url('/Electrolize-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-:root {
-  /* High-End Consulting Palette */
-  --background: #ffffff;
-  --foreground: #1e1b4b; /* Midnight Blue text for elegance */
-  
-  --card: #f8fafc;
-  --card-foreground: #1e1b4b;
-  
-  --primary: #312e81; /* Indigo 900 - Deep Corporate Blue */
-  --primary-foreground: #ffffff;
-  
-  --accent-purple: #4338ca; /* Indigo 700 */
-  --accent-green: #0f766e; /* Teal 700 */
-  --accent-gold: #b45309; /* Amber 700 */
-  
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #312e81;
-  
-  --radius: 0.5rem;
-}
-
-/* Light Mode Override (if needed, but default is Dark for this design) */
-.light {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --card: #f5f5f5;
-  --card-foreground: #0a0a0a;
-  --border: #e5e5e5;
-}
-
+/* Reset & Base */
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    overflow: hidden; /* Prevent default scroll for presentation mode */
+    overflow: hidden;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
+    @apply font-serif font-bold text-primary tracking-tight;
   }
 }
 
 @layer components {
   .slide-container {
-    @apply w-screen h-screen overflow-hidden relative;
+    @apply w-screen h-screen overflow-hidden relative bg-white;
   }
   
   .slide {
-    @apply w-full h-full absolute top-0 left-0 transition-transform duration-500 ease-in-out flex flex-col;
-    transform: translateY(100%);
+    @apply w-full h-full absolute top-0 left-0 transition-opacity duration-500 ease-in-out flex flex-col px-24 py-16;
+    opacity: 0;
+    pointer-events: none;
   }
   
   .slide.active {
-    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
   
-  .slide.prev {
-    transform: translateY(-100%);
+  /* Consulting Components */
+  .slide-header {
+    @apply border-b border-primary/20 pb-6 mb-12 flex justify-between items-end;
   }
   
-  .glass-panel {
-    @apply bg-white border border-slate-100 shadow-sm rounded-none; /* Sharp corners for corporate look */
+  .slide-title {
+    @apply text-4xl text-primary;
   }
   
-  .text-gradient {
-    @apply text-primary; /* No gradient, solid professional color */
+  .slide-subtitle {
+    @apply text-sm font-sans text-secondary uppercase tracking-widest;
   }
   
-  .timeline-line {
-    @apply h-px w-full bg-slate-300 relative my-8;
+  .consulting-card {
+    @apply bg-slate-50 border border-slate-200 p-6 h-full;
   }
   
-  .timeline-dot {
-    @apply absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-2 border-primary rounded-full;
+  .key-insight {
+    @apply border-l-4 border-accent pl-4 py-1 my-4 bg-red-50/50;
   }
   
-  .text-gradient-purple {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-purple to-purple-400;
+  .insight-text {
+    @apply text-lg font-serif italic text-slate-800;
+  }
+  
+  /* Chart Overrides for Professional Look */
+  .recharts-cartesian-grid-horizontal line,
+  .recharts-cartesian-grid-vertical line {
+    stroke: #e2e8f0;
   }
 }
