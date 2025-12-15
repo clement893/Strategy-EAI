@@ -2,6 +2,7 @@ import { Slide } from "@/components/Slide";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -140,29 +141,37 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-12 h-full items-center">
           <div>
             <h2 className="text-4xl mb-8">Analyse 2025 : <br/><span className="text-red-400">Le Pic de Dernière Minute</span></h2>
-            <div className="glass-panel p-8 mb-8">
-              <div className="flex items-center gap-4 mb-6">
+            <div className="glass-panel p-6 mb-8">
+              <div className="h-64 w-full mb-4">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart
+                    data={[
+                      { date: 'Jan 1', sales: 5 }, { date: 'Jan 15', sales: 12 }, { date: 'Feb 1', sales: 25 },
+                      { date: 'Feb 10', sales: 45 }, { date: 'Feb 15', sales: 80 }, { date: 'Feb 20', sales: 156 },
+                      { date: 'Feb 24', sales: 161 }, { date: 'Feb 25', sales: 111 }, { date: 'Feb 26', sales: 40 }
+                    ]}
+                  >
+                    <defs>
+                      <linearGradient id="colorSales" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#ef4444" stopOpacity={0.8}/>
+                        <stop offset="95%" stopColor="#ef4444" stopOpacity={0}/>
+                      </linearGradient>
+                    </defs>
+                    <XAxis dataKey="date" stroke="#666" tick={{fill: '#666'}} />
+                    <YAxis stroke="#666" tick={{fill: '#666'}} />
+                    <Tooltip 
+                      contentStyle={{ backgroundColor: '#1a1a1a', border: '1px solid #333' }}
+                      itemStyle={{ color: '#fff' }}
+                    />
+                    <Area type="monotone" dataKey="sales" stroke="#ef4444" fillOpacity={1} fill="url(#colorSales)" />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+              <div className="flex items-center gap-4 mb-2">
                 <div className="text-5xl font-bold text-accent-gold">50%</div>
                 <div className="text-gray-300 leading-tight">des ventes totales réalisées<br/>en seulement 6 jours.</div>
               </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-4 text-sm text-gray-400">
-                  <span className="w-16">24 fév</span>
-                  <div className="flex-1 bg-white/5 h-2 rounded-full overflow-hidden"><div className="bg-red-400 h-full w-full"></div></div>
-                  <span className="text-white">161</span>
-                </div>
-                <div className="flex items-center gap-4 text-sm text-gray-400">
-                  <span className="w-16">20 fév</span>
-                  <div className="flex-1 bg-white/5 h-2 rounded-full overflow-hidden"><div className="bg-red-400 h-full w-[96%]"></div></div>
-                  <span className="text-white">156</span>
-                </div>
-                <div className="flex items-center gap-4 text-sm text-gray-400">
-                  <span className="w-16">25 fév</span>
-                  <div className="flex-1 bg-white/5 h-2 rounded-full overflow-hidden"><div className="bg-red-400 h-full w-[68%]"></div></div>
-                  <span className="text-white">111</span>
-                </div>
-              </div>
-              <p className="mt-6 text-sm text-gray-400 italic border-l-2 border-red-400 pl-4">
+              <p className="mt-4 text-sm text-gray-400 italic border-l-2 border-red-400 pl-4">
                 "Ce pic tardif crée une tension extrême sur la trésorerie et la logistique. Il faut lisser la courbe."
               </p>
             </div>
