@@ -2,20 +2,27 @@ import { Slide } from "@/components/Slide";
 import { FontTest } from "@/components/FontTest";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 12; // Increased for Scope, Roadmap, Budget
+  const scrollTimeoutRef = useRef<number | null>(null);
 
-  const nextSlide = () => {
-    if (currentSlide < totalSlides - 1) setCurrentSlide(curr => curr + 1);
-  };
+  const nextSlide = useCallback(() => {
+    setCurrentSlide(curr => {
+      if (curr < totalSlides - 1) return curr + 1;
+      return curr;
+    });
+  }, [totalSlides]);
 
-  const prevSlide = () => {
-    if (currentSlide > 0) setCurrentSlide(curr => curr - 1);
-  };
+  const prevSlide = useCallback(() => {
+    setCurrentSlide(curr => {
+      if (curr > 0) return curr - 1;
+      return curr;
+    });
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -23,9 +30,36 @@ export default function Home() {
       if (e.key === "ArrowUp" || e.key === "ArrowLeft") prevSlide();
     };
 
+    const handleWheel = (e: WheelEvent) => {
+      // Prevent default scroll behavior
+      e.preventDefault();
+      
+      // Throttle scroll events to avoid too many slide changes
+      if (scrollTimeoutRef.current !== null) return;
+      
+      scrollTimeoutRef.current = window.setTimeout(() => {
+        scrollTimeoutRef.current = null;
+      }, 500); // Wait 500ms between slide changes
+      
+      // Scroll down = next slide, scroll up = previous slide
+      if (e.deltaY > 0) {
+        nextSlide();
+      } else if (e.deltaY < 0) {
+        prevSlide();
+      }
+    };
+
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentSlide]);
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("wheel", handleWheel);
+      if (scrollTimeoutRef.current !== null) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, [nextSlide, prevSlide]);
 
   return (
     <div className="slide-container bg-background text-foreground">
