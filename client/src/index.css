@@ -105,23 +105,23 @@
 }
 
 :root {
-  /* Cyber-Minimalism Palette */
-  --background: #050505;
-  --foreground: #ffffff;
+  /* High-End Consulting Palette */
+  --background: #ffffff;
+  --foreground: #1e1b4b; /* Midnight Blue text for elegance */
   
-  --card: #0a0a0a;
-  --card-foreground: #ffffff;
+  --card: #f8fafc;
+  --card-foreground: #1e1b4b;
   
-  --primary: #581c87; /* Electric Purple */
+  --primary: #312e81; /* Indigo 900 - Deep Corporate Blue */
   --primary-foreground: #ffffff;
   
-  --accent-purple: #7e22ce;
-  --accent-green: #059669;
-  --accent-gold: #b45309;
+  --accent-purple: #4338ca; /* Indigo 700 */
+  --accent-green: #0f766e; /* Teal 700 */
+  --accent-gold: #b45309; /* Amber 700 */
   
-  --border: #333333;
-  --input: #333333;
-  --ring: #6600FF;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #312e81;
   
   --radius: 0.5rem;
 }
@@ -167,11 +167,19 @@
   }
   
   .glass-panel {
-    @apply bg-black/40 backdrop-blur-md border border-white/10 rounded-xl;
+    @apply bg-white border border-slate-100 shadow-sm rounded-none; /* Sharp corners for corporate look */
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400;
+    @apply text-primary; /* No gradient, solid professional color */
+  }
+  
+  .timeline-line {
+    @apply h-px w-full bg-slate-300 relative my-8;
+  }
+  
+  .timeline-dot {
+    @apply absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-2 border-primary rounded-full;
   }
   
   .text-gradient-purple {
