@@ -1,4 +1,5 @@
 import { Slide } from "@/components/Slide";
+import { FontTest } from "@/components/FontTest";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -28,6 +29,13 @@ export default function Home() {
 
   return (
     <div className="slide-container bg-background text-foreground">
+      {/* Font Test - À retirer après validation */}
+      {import.meta.env.DEV && (
+        <div className="fixed top-4 left-4 z-[100] max-w-md">
+          <FontTest />
+        </div>
+      )}
+      
       {/* Navigation Controls */}
       <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
         <div className="flex flex-col gap-2 items-center">
