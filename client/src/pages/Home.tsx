@@ -7,7 +7,7 @@ import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "rec
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 13; // Increased for Analysis split
+  const totalSlides = 12; // Total slides count
   const scrollTimeoutRef = useRef<number | null>(null);
 
   const nextSlide = useCallback(() => {
@@ -112,8 +112,11 @@ export default function Home() {
 
       <div className="fixed bottom-8 left-8 z-50">
         <img src="/Nukleo_blanc_RVB.png" alt="Nukleo" className="h-6 opacity-80" />
-      </di      {/* SLIDE 13: CLOSING */}
-      <Slide isActive={currentSlide === 12} isPrev={currentSlide > 12} backgroundImage="/audience-moment.jpg">        <div className="max-w-4xl">
+      </div>
+
+      {/* SLIDE 1: COVER */}
+      <Slide isActive={currentSlide === 0} isPrev={currentSlide > 0} backgroundImage="/audience-moment.jpg">
+        <div className="max-w-4xl">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
             <span className="text-gradient">Entertain-AI</span> <span className="text-accent-purple">2026</span>
           </h1>
@@ -246,8 +249,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </Sli      {/* SLIDE 7: ORCHESTRATION BUDGÉTAIRE */}
-      <Slide isActive={currentSlide === 6} isPrev={currentSlide > 6} backgroundImage="/Fond_minimalistes_5.png">backgroundImage="/Fond_minimalistes_3.png">  <h2 className="text-4xl mb-12">Stratégie de Tarification <span className="text-accent-purple">Narrative</span></h2>
+      </Slide>
+
+      {/* SLIDE 5: TARIFICATION */}
+      <Slide isActive={currentSlide === 4} isPrev={currentSlide > 4} backgroundImage="/Fond_minimalistes_3.png">
+        <h2 className="text-4xl mb-12">Stratégie de Tarification <span className="text-accent-purple">Narrative</span></h2>
         
         <div className="grid md:grid-cols-3 gap-6">
           {/* Phase 1 */}
@@ -302,8 +308,8 @@ export default function Home() {
         </div>
       </Slide>
 
-      {/* SLIDE 9: SCOPE OF WORK */}
-      <Slide isActive={currentSlide === 8} isPrev={currentSlide > 8} backgroundImage="/Fond_minimalistes_7.png">
+      {/* SLIDE 10: SCOPE OF WORK */}
+      <Slide isActive={currentSlide === 9} isPrev={currentSlide > 9} backgroundImage="/Fond_minimalistes_7.png">
         <h2 className="text-4xl mb-12">Notre Périmètre d'Intervention</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="glass-panel p-8">
@@ -343,8 +349,8 @@ export default function Home() {
         </div>
       </Slide>
 
-       {/* SLIDE 10: ROADMAP */}
-      <Slide isActive={currentSlide === 9} isPrev={currentSlide > 9} backgroundImage="/Fond_minimalistes_8.png">
+      {/* SLIDE 11: ROADMAP */}
+      <Slide isActive={currentSlide === 10} isPrev={currentSlide > 10} backgroundImage="/Fond_minimalistes_8.png">
         <h2 className="text-4xl mb-12">Roadmap Opérationnelle</h2>
         <div className="relative border-l-2 border-white/10 ml-4 space-y-12">
           <div className="relative pl-8">
@@ -368,45 +374,10 @@ export default function Home() {
             <p className="text-gray-400">A/B testing des créas, ajustement des budgets par canal, reporting hebdo.</p>
           </div>
         </div>
-           {/* SLIDE 12: MESURE & CONCLUSION */}
-      <Slide isActive={currentSlide === 11} isPrev={currentSlide > 11} backgroundImage="/Fond_minimalistes_2.png">backgroundImage="/Fond_minimalistes_1.png">
-        <h2 className="text-4xl mb-12">Investissement Global</h2>
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="glass-panel p-8 flex flex-col justify-between border border-white/10">
-            <div>
-              <h3 className="text-sm font-display text-gray-400 mb-2">BUDGET MÉDIA (ESTIMÉ)</h3>
-              <div className="text-5xl font-bold text-white mb-6">25 000 $</div>
-              <p className="text-gray-400 text-sm mb-6">Payé directement aux plateformes (Meta, Google, LinkedIn).</p>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>• Meta Ads : 12 500 $</li>
-                <li>• LinkedIn Ads : 7 500 $</li>
-                <li>• Google Ads : 5 000 $</li>
-              </ul>
-            </div>
-          </div>
-          <div className="glass-panel p-8 flex flex-col justify-between border border-accent-purple/50 bg-accent-purple/5">
-            <div>
-              <h3 className="text-sm font-display text-accent-purple mb-2">HONORAIRES AGENCE</h3>
-              <div className="text-5xl font-bold text-white mb-6">15 000 $</div>
-              <p className="text-gray-400 text-sm mb-6">Forfait global pour la durée de la campagne (3 mois).</p>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>• Stratégie & Pilotage</li>
-                <li>• Création & Production</li>
-                <li>• Gestion Média & Reporting</li>
-              </ul>
-            </div>
-            <div className="mt-8 pt-6 border-t border-white/10">
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-400">ROI Estimé</span>
-                <span className="text-xl font-bold text-green-400">x4.5</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </Slide>
 
-      {/* SLIDE 12: MESURE (Moved) */}
-      <Slide isActive={currentSlide === 11} isPrev={currentSlide > 11}>
+      {/* SLIDE 12: MESURE */}
+      <Slide isActive={currentSlide === 11} isPrev={currentSlide > 11} backgroundImage="/Fond_minimalistes_2.png">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl mb-12">Mesurer le Succès</h2>
           
@@ -449,8 +420,8 @@ export default function Home() {
         </div>
       </Slide>
 
-            {/* SLIDE 6: PLAN MÉDIA */}
-      <Slide isActive={currentSlide === 5} isPrev={currentSlide > 5} backgroundImage="/Fond_minimalistes_4.png">4}>
+      {/* SLIDE 6: PLAN MÉDIA */}
+      <Slide isActive={currentSlide === 5} isPrev={currentSlide > 5} backgroundImage="/Fond_minimalistes_4.png">
         <div className="grid md:grid-cols-2 gap-12 h-full items-center">
           <div>
             <h2 className="text-4xl mb-8">Plan Média : <br/><span className="text-accent-gold">Orchestration du Budget</span></h2>
@@ -515,8 +486,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </Slide      {/* SLIDE 8: MATRICE CRÉATIVE */}
-      <Slide isActive={currentSlide === 7} isPrev={currentSlide > 7} backgroundImage="/Fond_minimalistes_6.png">    <h2 className="text-4xl mb-12">Symphonie Créative : <span className="text-white">Tech & Humain</span></h2>
+      </Slide>
+
+      {/* SLIDE 7: CRÉATIFS */}
+      <Slide isActive={currentSlide === 6} isPrev={currentSlide > 6} backgroundImage="/Fond_minimalistes_6.png">
+        <h2 className="text-4xl mb-12">Symphonie Créative : <span className="text-white">Tech & Humain</span></h2>
         
         <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-4">
@@ -567,8 +541,8 @@ export default function Home() {
         </div>
       </Slide>
 
-      {/* SLIDE 7: PERSONAS & CIBLAGE (NEW) */}
-      <Slide isActive={currentSlide === 6} isPrev={currentSlide > 6}>
+      {/* SLIDE 8: PERSONAS & CIBLAGE */}
+      <Slide isActive={currentSlide === 7} isPrev={currentSlide > 7} backgroundImage="/Fond_minimalistes_5.png">
         <h2 className="text-4xl mb-12">Ciblage : <span className="text-accent-purple">Nos 3 Piliers</span></h2>
         
         <div className="grid md:grid-cols-3 gap-8">
@@ -613,8 +587,8 @@ export default function Home() {
         </div>
       </Slide>
 
-      {/* SLIDE 8: RISQUES & MITIGATION (NEW) */}
-      <Slide isActive={currentSlide === 7} isPrev={currentSlide > 7}>
+      {/* SLIDE 9: RISQUES & MITIGATION */}
+      <Slide isActive={currentSlide === 8} isPrev={currentSlide > 8} backgroundImage="/Fond_minimalistes_4.png">
         <h2 className="text-4xl mb-12">Gestion des Risques</h2>
         
         <div className="grid md:grid-cols-2 gap-8">
