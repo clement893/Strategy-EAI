@@ -1,12 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import ExecutiveSummary from "@/components/ExecutiveSummary";
 import Analysis from "@/components/Analysis";
 import Personas from "@/components/Personas";
 import Strategy from "@/components/Strategy";
 import Budget from "@/components/Budget";
 import KPIs from "@/components/KPIs";
 import Timeline from "@/components/Timeline";
-import DetailedCalendar from "@/components/DetailedCalendar";
 
 export default function Home() {
   return (
@@ -14,12 +14,13 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <ExecutiveSummary />
         <Analysis />
         <Personas />
         <Strategy />
         <Budget />
+        <KPIs />
         <Timeline />
-        <DetailedCalendar />
       </main>
       
       <footer className="py-12 border-t border-white/10 text-center bg-background">

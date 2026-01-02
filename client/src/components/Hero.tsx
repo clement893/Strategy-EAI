@@ -3,7 +3,7 @@ import { ArrowDown } from "lucide-react";
 
 export default function Hero() {
   const scrollToContent = () => {
-    const element = document.getElementById("analysis");
+    const element = document.getElementById("executive-summary");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -24,16 +24,16 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="inline-block py-1 px-3 rounded-full border border-white/20 bg-white/5 text-xs font-sans uppercase tracking-widest mb-8">
-            Stratégie Marketing 2026
+            Préparé par Nukleo • Décembre 2025
           </span>
           
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-sans font-bold tracking-tight mb-6 leading-none">
-            ENTERTAIN <br />
-            <span className="font-serif italic font-normal text-white/90">AI</span>
+            Stratégie Marketing <br />
+            <span className="font-serif italic font-normal text-white/90">Entertain-AI 2026</span>
           </h1>
           
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/60 font-sans font-light leading-relaxed mb-12">
-            Plan d'action pour maximiser les ventes, redistribuer la croissance et solidifier le leadership IA au Québec.
+          <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/60 font-sans font-light leading-relaxed mb-12">
+            Plan d'action pour maximiser les ventes, redistribuer la croissance et solidifier le leadership IA au sein des ICC du Québec
           </p>
         </motion.div>
 
