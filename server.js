@@ -199,7 +199,7 @@ function getHTMLTemplate(title, content) {
         }
     </style>
 </head>
-<body>
+<body style="background: #f5f5f5; margin: 0; padding: 0;">
     <div class="container">
         <header>
             <h1>Stratégie Entertain-AI 2026</h1>
