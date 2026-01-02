@@ -133,6 +133,30 @@ export interface ContentData {
     sectionTitle: string;
     intro: string;
     totalBudget: number;
+    linkedinBudget: number;
+    linkedinPercentage: number;
+    linkedinTickets: number;
+    linkedinCPA: number;
+    metaBudget: number;
+    metaPercentage: number;
+    metaTickets: number;
+    metaCPA: number;
+    googleBudget: number;
+    googlePercentage: number;
+    googleTickets: number;
+    googleCPA: number;
+    laPresseNote: string;
+    laPresseTickets: number;
+    webinarBudget: number;
+    webinarPercentage: number;
+    webinarTickets: number;
+    webinarCPA: number;
+    emailBudget: number;
+    emailPercentage: number;
+    emailTickets: number;
+    emailCPA: number;
+    totalTickets: number;
+    avgCPA: number;
   };
   timeline: {
     sectionNumber: string;
@@ -320,7 +344,7 @@ export const defaultContent: ContentData = {
   },
 
   kpis: {
-    sectionNumber: "06",
+    sectionNumber: "05",
     sectionTitle: "KPIs et métriques de succès",
     intro: "Les indicateurs de performance sont organisés en trois catégories principales : ventes, acquisition et notoriété. Chaque KPI dispose d'un objectif étiré (scénario exceptionnel) et d'un objectif minimal (seuil de succès).",
     salesTitle: "KPIs de ventes",
@@ -328,18 +352,42 @@ export const defaultContent: ContentData = {
     brandTitle: "KPIs de notoriété"
   },
   mediaPlan: {
-    sectionNumber: "07",
+    sectionNumber: "06",
     sectionTitle: "Plan média détaillé et distribution budgétaire",
-    intro: "Répartition stratégique du budget publicitaire de 13 000 $ sur 6 canaux d'acquisition. Le partenariat La Presse est gratuit et constitue un levier média majeur.",
-    totalBudget: 13000
+    intro: "Répartition stratégique du budget publicitaire de 13 000 $ sur 5 canaux d'acquisition. Le partenariat La Presse est gratuit (partenariat média) et constitue un levier majeur pour atteindre 200 billets vendus.",
+    totalBudget: 13000,
+    linkedinBudget: 5000,
+    linkedinPercentage: 38,
+    linkedinTickets: 150,
+    linkedinCPA: 33,
+    metaBudget: 4000,
+    metaPercentage: 31,
+    metaTickets: 120,
+    metaCPA: 33,
+    googleBudget: 4000,
+    googlePercentage: 31,
+    googleTickets: 100,
+    googleCPA: 40,
+    laPresseNote: "Gratuit (partenariat média)",
+    laPresseTickets: 200,
+    webinarBudget: 500,
+    webinarPercentage: 4,
+    webinarTickets: 50,
+    webinarCPA: 10,
+    emailBudget: 0,
+    emailPercentage: 0,
+    emailTickets: 130,
+    emailCPA: 0,
+    totalTickets: 750,
+    avgCPA: 17.33
   },
   timeline: {
-    sectionNumber: "08",
+    sectionNumber: "07",
     sectionTitle: "Calendrier d'exécution détaillé",
     intro: "Planning semaine par semaine du 16 décembre 2025 au 18 février 2026, avec actions prioritaires et objectifs de billets vendus pour chaque période. Ce calendrier assure une exécution rigoureuse et une redistribution équilibrée des ventes."
   },
   freeTickets: {
-    sectionNumber: "09",
+    sectionNumber: "08",
     sectionTitle: "Stratégie de distribution des billets gratuits",
     intro: "Les billets donnés (250 sur 1 000) ne sont pas une perte, mais un investissement stratégique générant une valeur équivalente ou supérieure au budget marketing. Chaque billet gratuit est attribué à des partenaires qui apportent une contribution tangible à l'événement.",
     totalTickets: 250,
@@ -359,7 +407,7 @@ export const defaultContent: ContentData = {
     category4Value: 15000
   },
   riskManagement: {
-    sectionNumber: "10",
+    sectionNumber: "09",
     sectionTitle: "Gestion des risques et plan de contingence",
     intro: "Un plan de contingence structuré pour anticiper et réagir rapidement aux écarts de performance. Le seuil d'alerte est fixé à moins de 300 billets vendus au 31 janvier, déclenchant un budget d'urgence de 5 000 $ et des actions correctives immédiates.",
     alertThreshold: 300,
@@ -367,7 +415,7 @@ export const defaultContent: ContentData = {
     emergencyBudget: 5000
   },
   geographicExpansion: {
-    sectionNumber: "11",
+    sectionNumber: "10",
     sectionTitle: "Expansion géographique : Vision 2027-2028",
     intro: "La stratégie 2026 se concentre exclusivement sur le marché québécois pour maximiser le ROI. L'expansion internationale est reportée à 2027-2028, une fois la preuve de concept établie et le modèle économique validé.",
     whyQuebecTitle: "Pourquoi Québec d'abord ?",
@@ -384,7 +432,7 @@ export const defaultContent: ContentData = {
     year2028Region: "France, Belgique, Suisse"
   },
   conclusion: {
-    sectionNumber: "12",
+    sectionNumber: "11",
     sectionTitle: "Conclusion",
     intro: "L'objectif de 750 billets vendus représente une croissance ambitieuse de +233 % vs 2025, mais réaliste avec une stratégie structurée et des leviers éprouvés.",
     targetSales: 750,
