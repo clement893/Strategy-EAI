@@ -5,7 +5,7 @@ import ICCDefinition from "@/components/ICCDefinition";
 import Analysis from "@/components/Analysis";
 import Personas from "@/components/Personas";
 import Strategy from "@/components/Strategy";
-import Budget from "@/components/Budget";
+
 import KPIs from "@/components/KPIs";
 import MediaPlan from "@/components/MediaPlan";
 import Timeline from "@/components/Timeline";
@@ -26,7 +26,7 @@ export default function Home() {
         <Analysis />
         <Personas />
         <Strategy />
-        <Budget />
+
         <KPIs />
         <MediaPlan />
         <Timeline />

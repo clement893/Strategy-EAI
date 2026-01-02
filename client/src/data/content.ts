@@ -119,15 +119,7 @@ export interface ContentData {
     phase3Revenue: number;
     phase3Description: string;
   };
-  budget: {
-    sectionNumber: string;
-    sectionTitle: string;
-    intro: string;
-    totalBudget: number;
-    laPresseTitle: string;
-    laPresseIntro: string;
-    laPresseTotal: number;
-  };
+
   kpis: {
     sectionNumber: string;
     sectionTitle: string;
@@ -326,15 +318,7 @@ export const defaultContent: ContentData = {
     phase3Revenue: 12600,
     phase3Description: "Amplification budgétaire +30 % sur LinkedIn/Meta, retargeting agressif de tous les visiteurs, messages d'urgence (dernières places, compte à rebours), offre flash 48h mi-février (-15 %), activation des participants confirmés pour partage social."
   },
-  budget: {
-    sectionNumber: "05",
-    sectionTitle: "Budget et répartition",
-    intro: "Le budget publicitaire total de 13 000 $ est réparti stratégiquement sur trois phases et six canaux d'acquisition. Le partenariat La Presse est gratuit et constitue un levier média majeur.",
-    totalBudget: 13000,
-    laPresseTitle: "Focus : Partenariat La Presse",
-    laPresseIntro: "Le partenariat avec La Presse est gratuit (partenariat média) et constitue le levier principal pour atteindre les décideurs ICC et générer une crédibilité éditoriale maximale.",
-    laPresseTotal: 0
-  },
+
   kpis: {
     sectionNumber: "06",
     sectionTitle: "KPIs et métriques de succès",
