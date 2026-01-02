@@ -125,8 +125,26 @@ export interface ContentData {
     sectionTitle: string;
     intro: string;
     salesTitle: string;
+    salesTickets: number;
+    salesGrowth: string;
+    salesAvgPrice: number;
+    salesRevenue: number;
     acquisitionTitle: string;
+    acquisitionCPA: number;
+    acquisitionTraffic: string;
+    acquisitionConversion: string;
     brandTitle: string;
+    brandImpressions: string;
+    brandReachLaPresse: string;
+    brandCTR: string;
+    stretchedTitle: string;
+    stretchedTickets: number;
+    stretchedGrowth: string;
+    stretchedDescription: string;
+    minimalTitle: string;
+    minimalTickets: number;
+    minimalGrowth: string;
+    minimalDescription: string;
   };
   mediaPlan: {
     sectionNumber: string;
@@ -244,22 +262,22 @@ export const defaultContent: ContentData = {
     concentrationLastWeek: "80,6 %",
     eventDate: "18-19 février 2026",
     eventLocation: "Palais des congrès de Montréal",
-    objective2026: 750,
-    objectiveIncrease: "+233%",
-    revenue2026: 24750,
+    objective2026: 500,
+    objectiveIncrease: "+122%",
+    revenue2026: 16500,
     budget: 13000,
-    roi: "1,90:1",
-    cpa: 17.33,
+    roi: "1,27:1",
+    cpa: 26,
     avgPrice: 33,
-    objectiveStretched: 850,
-    objectiveMinimal: 500
+    objectiveStretched: 600,
+    objectiveMinimal: 400
   },
   objectives: {
-    decemberSales: 90,
+    decemberSales: 60,
     decemberPercentage: 12,
-    januarySales: 300,
+    januarySales: 200,
     januaryPercentage: 40,
-    februarySales: 360,
+    februarySales: 240,
     februaryPercentage: 48
   },
   iccDefinition: {
@@ -325,19 +343,19 @@ export const defaultContent: ContentData = {
     intro: "La stratégie marketing s'articule autour de trois phases distinctes, chacune avec des objectifs, tactiques et budgets spécifiques. L'objectif global est de redistribuer les ventes sur trois mois pour réduire la concentration critique de février.",
     phase1Name: "Phase 1 : Fondation et anticipation",
     phase1Dates: "16 décembre 2025 - 31 décembre 2025",
-    phase1Objective: "90 billets vendus (12 % de l'objectif)",
+    phase1Objective: "60 billets vendus (12 % de l'objectif)",
     phase1Budget: 3500,
     phase1Revenue: 1575,
     phase1Description: "Activation de la base de données fidèles (987 participants 2025), annonce des têtes d'affiche, optimisation du site web et du funnel de conversion, lancement du rabais -50 % jusqu'au 31 décembre.",
     phase2Name: "Phase 2 : Amplification et visibilité",
     phase2Dates: "1 janvier 2026 - 31 janvier 2026",
-    phase2Objective: "300 billets vendus (40 % de l'objectif)",
+    phase2Objective: "200 billets vendus (40 % de l'objectif)",
     phase2Budget: 21500,
     phase2Revenue: 8850,
     phase2Description: "Lancement des campagnes payantes (LinkedIn, Meta, Google), activation du partenariat La Presse (article commandité + 3 infolettres), webinaire de prévisualisation, retargeting professionnel, paliers tarifaires -30 % puis -20 %.",
     phase3Name: "Phase 3 : Intensification et urgence",
     phase3Dates: "1 février 2026 - 17 février 2026",
-    phase3Objective: "360 billets vendus (48 % de l'objectif)",
+    phase3Objective: "240 billets vendus (48 % de l'objectif)",
     phase3Budget: 3000,
     phase3Revenue: 12600,
     phase3Description: "Amplification budgétaire +30 % sur LinkedIn/Meta, retargeting agressif de tous les visiteurs, messages d'urgence (dernières places, compte à rebours), offre flash 48h mi-février (-15 %), activation des participants confirmés pour partage social."
@@ -345,41 +363,59 @@ export const defaultContent: ContentData = {
 
   kpis: {
     sectionNumber: "05",
-    sectionTitle: "KPIs et métriques de succès",
-    intro: "Les indicateurs de performance sont organisés en trois catégories principales : ventes, acquisition et notoriété. Chaque KPI dispose d'un objectif étiré (scénario exceptionnel) et d'un objectif minimal (seuil de succès).",
-    salesTitle: "KPIs de ventes",
-    acquisitionTitle: "KPIs d'acquisition",
-    brandTitle: "KPIs de notoriété"
+    sectionTitle: "Indicateurs clés de performance",
+    intro: "Les KPIs stratégiques qui guideront l'exécution et permettront d'évaluer le succès de la stratégie marketing 2026. Ces indicateurs sont mesurables, actionnables et alignés sur les objectifs commerciaux.",
+    salesTitle: "Ventes",
+    salesTickets: 500,
+    salesGrowth: "+122 % vs 2025",
+    salesAvgPrice: 33,
+    salesRevenue: 16500,
+    acquisitionTitle: "Acquisition",
+    acquisitionCPA: 26,
+    acquisitionTraffic: "40 000+",
+    acquisitionConversion: "1,25%",
+    brandTitle: "Notoriété",
+    brandImpressions: "1M+",
+    brandReachLaPresse: "3,9M",
+    brandCTR: "2,5%",
+    stretchedTitle: "Objectif étiré",
+    stretchedTickets: 600,
+    stretchedGrowth: "+167 % vs 2025",
+    stretchedDescription: "Scénario exceptionnel en cas de surperformance des campagnes et d'un effet viral organique majeur.",
+    minimalTitle: "Seuil de succès minimal",
+    minimalTickets: 400,
+    minimalGrowth: "+78 % vs 2025",
+    minimalDescription: "Seuil minimum pour considérer la stratégie comme un succès et justifier l'investissement marketing."
   },
   mediaPlan: {
     sectionNumber: "06",
     sectionTitle: "Plan média détaillé et distribution budgétaire",
-    intro: "Répartition stratégique du budget publicitaire de 13 000 $ sur 5 canaux d'acquisition. Le partenariat La Presse est gratuit (partenariat média) et constitue un levier majeur pour atteindre 200 billets vendus.",
+    intro: "Répartition stratégique du budget publicitaire de 13 000 $ sur 5 canaux d'acquisition. Le partenariat La Presse est gratuit (partenariat média) et constitue un levier majeur pour atteindre 133 billets vendus.",
     totalBudget: 13000,
     linkedinBudget: 5000,
     linkedinPercentage: 38,
-    linkedinTickets: 150,
+    linkedinTickets: 100,
     linkedinCPA: 33,
     metaBudget: 4000,
     metaPercentage: 31,
-    metaTickets: 120,
+    metaTickets: 80,
     metaCPA: 33,
     googleBudget: 4000,
     googlePercentage: 31,
-    googleTickets: 100,
+    googleTickets: 67,
     googleCPA: 40,
     laPresseNote: "Gratuit (partenariat média)",
-    laPresseTickets: 200,
+    laPresseTickets: 133,
     webinarBudget: 500,
     webinarPercentage: 4,
-    webinarTickets: 50,
+    webinarTickets: 33,
     webinarCPA: 10,
     emailBudget: 0,
     emailPercentage: 0,
-    emailTickets: 130,
+    emailTickets: 87,
     emailCPA: 0,
-    totalTickets: 750,
-    avgCPA: 17.33
+    totalTickets: 500,
+    avgCPA: 26
   },
   timeline: {
     sectionNumber: "07",
@@ -434,10 +470,10 @@ export const defaultContent: ContentData = {
   conclusion: {
     sectionNumber: "11",
     sectionTitle: "Conclusion",
-    intro: "L'objectif de 750 billets vendus représente une croissance ambitieuse de +233 % vs 2025, mais réaliste avec une stratégie structurée et des leviers éprouvés.",
-    targetSales: 750,
-    growthPercentage: "+233 %",
-    revenue: 24750,
+    intro: "L'objectif de 500 billets vendus représente une croissance ambitieuse de +122 % vs 2025, mais réaliste avec une stratégie structurée et des leviers éprouvés.",
+    targetSales: 500,
+    growthPercentage: "+122 %",
+    revenue: 16500,
     valueRatio: "11,5:1",
     totalValue: 149750,
     investment: 13000
