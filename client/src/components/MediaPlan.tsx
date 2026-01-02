@@ -67,40 +67,7 @@ export default function MediaPlan() {
           </Table>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors duration-500">
-            <CardHeader>
-              <CardTitle className="font-sans text-sm uppercase tracking-widest text-white/50">Canal le plus efficace</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-4xl font-serif italic mb-2 text-green-300">Webinaire</div>
-              <p className="text-sm text-white/70 mb-2">CPA : 10 $</p>
-              <p className="text-xs text-white/50">50 billets attendus avec un investissement minimal</p>
-            </CardContent>
-          </Card>
 
-          <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors duration-500">
-            <CardHeader>
-              <CardTitle className="font-sans text-sm uppercase tracking-widest text-white/50">Canal le plus volumineux</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-4xl font-serif italic mb-2 text-blue-300">La Presse</div>
-              <p className="text-sm text-white/70 mb-2">Budget : 15 000 $ (54 %)</p>
-              <p className="text-xs text-white/50">200 billets attendus avec crédibilité éditoriale maximale</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors duration-500">
-            <CardHeader>
-              <CardTitle className="font-sans text-sm uppercase tracking-widest text-white/50">Acquisition organique</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-4xl font-serif italic mb-2">130</div>
-              <p className="text-sm text-white/70 mb-2">Billets fidèles (CPA : 0 $)</p>
-              <p className="text-xs text-white/50">Base de données de 987 participants 2025</p>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );
