@@ -11,7 +11,7 @@ import MediaPlan from "@/components/MediaPlan";
 import Timeline from "@/components/Timeline";
 
 import RiskManagement from "@/components/RiskManagement";
-import GeographicExpansion from "@/components/GeographicExpansion";
+
 import Conclusion from "@/components/Conclusion";
 import AdminPanel from "@/components/AdminPanel";
 
@@ -32,7 +32,7 @@ export default function Home() {
         <Timeline />
 
         <RiskManagement />
-        <GeographicExpansion />
+
         <Conclusion />
       </main>
       

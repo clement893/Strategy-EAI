@@ -188,25 +188,8 @@ export interface ContentData {
     intro: string;
     alertThreshold: number;
     alertDate: string;
-    emergencyBudget: number;
   };
-  geographicExpansion: {
-    sectionNumber: string;
-    sectionTitle: string;
-    intro: string;
-    whyQuebecTitle: string;
-    localCPA: number;
-    internationalCPA: string;
-    localPotential: string;
-    year2027Title: string;
-    year2027Budget: number;
-    year2027Target: number;
-    year2027Region: string;
-    year2028Title: string;
-    year2028Budget: number;
-    year2028Target: number;
-    year2028Region: string;
-  };
+
   conclusion: {
     sectionNumber: string;
     sectionTitle: string;
@@ -407,30 +390,13 @@ export const defaultContent: ContentData = {
   riskManagement: {
     sectionNumber: "08",
     sectionTitle: "Gestion des risques et plan de contingence",
-    intro: "Un plan de contingence structuré pour anticiper et réagir rapidement aux écarts de performance. Le seuil d'alerte est fixé à moins de 300 billets vendus au 31 janvier, déclenchant un budget d'urgence de 5 000 $ et des actions correctives immédiates.",
+    intro: "Un plan de contingence structuré pour anticiper et réagir rapidement aux écarts de performance. Le seuil d'alerte est fixé à moins de 300 billets vendus au 31 janvier, déclenchant des actions correctives immédiates.",
     alertThreshold: 300,
-    alertDate: "31 janvier",
-    emergencyBudget: 5000
+    alertDate: "31 janvier"
   },
-  geographicExpansion: {
-    sectionNumber: "09",
-    sectionTitle: "Expansion géographique : Vision 2027-2028",
-    intro: "La stratégie 2026 se concentre exclusivement sur le marché québécois pour maximiser le ROI. L'expansion internationale est reportée à 2027-2028, une fois la preuve de concept établie et le modèle économique validé.",
-    whyQuebecTitle: "Pourquoi Québec d'abord ?",
-    localCPA: 37,
-    internationalCPA: "220-330",
-    localPotential: "5 000+",
-    year2027Title: "2027 - Phase pilote",
-    year2027Budget: 15000,
-    year2027Target: 100,
-    year2027Region: "Ontario et États du Nord-Est",
-    year2028Title: "2028 - Expansion francophone",
-    year2028Budget: 25000,
-    year2028Target: 150,
-    year2028Region: "France, Belgique, Suisse"
-  },
+
   conclusion: {
-    sectionNumber: "10",
+    sectionNumber: "09",
     sectionTitle: "Conclusion",
     intro: "L'objectif de 500 billets vendus représente une croissance ambitieuse de +122 % vs 2025, mais réaliste avec une stratégie structurée et des leviers éprouvés.",
     targetSales: 500,
