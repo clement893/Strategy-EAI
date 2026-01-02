@@ -197,9 +197,6 @@ export interface ContentData {
     targetSales: number;
     growthPercentage: string;
     revenue: number;
-    valueRatio: string;
-    totalValue: number;
-    investment: number;
   };
   
   creatives: {
@@ -418,10 +415,7 @@ export const defaultContent: ContentData = {
     intro: "L'objectif de 500 billets vendus représente une croissance ambitieuse de +122 % vs 2025, mais réaliste avec une stratégie structurée et des leviers éprouvés.",
     targetSales: 500,
     growthPercentage: "+122 %",
-    revenue: 16500,
-    valueRatio: "11,5:1",
-    totalValue: 149750,
-    investment: 13000
+    revenue: 16500
   },
   
   creatives: {
