@@ -52,17 +52,16 @@ export default function Conclusion() {
                   {conclusion.revenue.toLocaleString()} $
                 </div>
                 <p className="text-sm text-white/70">Revenus billets</p>
-                <p className="text-xs text-white/50 mt-2">Prix moyen 33 $</p>
+                <p className="text-xs text-white/50 mt-2">Prix moyen 250 $</p>
               </CardContent>
             </Card>
 
             <Card className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-500/20">
-              <CardContent className="p-8 text-center">
-                <div className="text-6xl font-serif italic mb-2 text-purple-300">1,27:1</div>
+              <CardContent className="p-8 text-cen                <div className="text-6xl font-serif italic mb-2 text-purple-300">
+                  9,62:1
+                </div>
                 <p className="text-sm text-white/70">ROI marketing</p>
-                <p className="text-xs text-white/50 mt-2">16 500 $ / 13 000 $</p>
-              </CardContent>
-            </Card>
+                <p className="text-xs text-white/50 mt-2">125 000 $ / 13 000 $</p>            </Card>
           </div>
 
           <div className="bg-white/5 border border-white/10 p-8 rounded-lg mb-12">

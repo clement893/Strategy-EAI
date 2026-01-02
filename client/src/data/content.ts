@@ -242,11 +242,11 @@ export const defaultContent: ContentData = {
     eventLocation: "Palais des congrès de Montréal",
     objective2026: 500,
     objectiveIncrease: "+122%",
-    revenue2026: 16500,
+    revenue2026: 125000,
     budget: 13000,
-    roi: "1,27:1",
+    roi: "9,62:1",
     cpa: 26,
-    avgPrice: 33,
+    avgPrice: 250,
     objectiveStretched: 600,
     objectiveMinimal: 400
   },
@@ -323,19 +323,19 @@ export const defaultContent: ContentData = {
     phase1Dates: "5 janvier 2026 - 15 janvier 2026",
     phase1Objective: "60 billets vendus (12 % de l'objectif)",
     phase1Budget: 3500,
-    phase1Revenue: 1575,
+    phase1Revenue: 15000,
     phase1Description: "Activation de la base de données fidèles (987 participants 2025), annonce des têtes d'affiche, optimisation du site web et du funnel de conversion, lancement du rabais -50 % jusqu'au 31 décembre.",
     phase2Name: "Phase 2 : Amplification et conversion",
     phase2Dates: "16 janvier 2026 - 31 janvier 2026",
     phase2Objective: "200 billets vendus (40 % de l'objectif)",
     phase2Budget: 21500,
-    phase2Revenue: 8850,
+    phase2Revenue: 50000,
     phase2Description: "Lancement des campagnes payantes (LinkedIn, Meta, Google), activation du partenariat La Presse (article commandité + 3 infolettres), webinaire de prévisualisation, retargeting professionnel, paliers tarifaires -30 % puis -20 %.",
     phase3Name: "Phase 3 : Intensification et dernier appel",
     phase3Dates: "1 février 2026 - 18 février 2026",
     phase3Objective: "240 billets vendus (48 % de l'objectif)",
     phase3Budget: 3000,
-    phase3Revenue: 12600,
+    phase3Revenue: 60000,
     phase3Description: "Amplification budgétaire +30 % sur LinkedIn/Meta, retargeting agressif de tous les visiteurs, messages d'urgence (dernières places, compte à rebours), offre flash 48h mi-février (-15 %), activation des participants confirmés pour partage social."
   },
 
@@ -415,7 +415,7 @@ export const defaultContent: ContentData = {
     intro: "L'objectif de 500 billets vendus représente une croissance ambitieuse de +122 % vs 2025, mais réaliste avec une stratégie structurée et des leviers éprouvés.",
     targetSales: 500,
     growthPercentage: "+122 %",
-    revenue: 16500
+    revenue: 125000
   },
   
   creatives: {
