@@ -1,12 +1,18 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ExecutiveSummary from "@/components/ExecutiveSummary";
+import ICCDefinition from "@/components/ICCDefinition";
 import Analysis from "@/components/Analysis";
 import Personas from "@/components/Personas";
 import Strategy from "@/components/Strategy";
 import Budget from "@/components/Budget";
 import KPIs from "@/components/KPIs";
+import MediaPlan from "@/components/MediaPlan";
 import Timeline from "@/components/Timeline";
+import FreeTickets from "@/components/FreeTickets";
+import RiskManagement from "@/components/RiskManagement";
+import GeographicExpansion from "@/components/GeographicExpansion";
+import Conclusion from "@/components/Conclusion";
 
 export default function Home() {
   return (
@@ -15,12 +21,18 @@ export default function Home() {
       <main>
         <Hero />
         <ExecutiveSummary />
+        <ICCDefinition />
         <Analysis />
         <Personas />
         <Strategy />
         <Budget />
         <KPIs />
+        <MediaPlan />
         <Timeline />
+        <FreeTickets />
+        <RiskManagement />
+        <GeographicExpansion />
+        <Conclusion />
       </main>
       
       <footer className="py-12 border-t border-white/10 text-center bg-background">
