@@ -37,7 +37,7 @@ export default function Conclusion() {
             <Card className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-green-500/20">
               <CardContent className="p-8 text-center">
                 <div className="text-6xl font-serif italic mb-2 text-green-300">
-                  <EditableField path="conclusion.targetSales" />
+                  {conclusion.targetSales}
                 </div>
                 <p className="text-sm text-white/70">Billets vendus</p>
                 <p className="text-xs text-white/50 mt-2">
@@ -49,7 +49,7 @@ export default function Conclusion() {
             <Card className="bg-gradient-to-br from-blue-500/10 to-indigo-500/10 border-blue-500/20">
               <CardContent className="p-8 text-center">
                 <div className="text-6xl font-serif italic mb-2 text-blue-300">
-                  <EditableField path="conclusion.revenue" /> $
+                  {conclusion.revenue.toLocaleString()} $
                 </div>
                 <p className="text-sm text-white/70">Revenus billets</p>
                 <p className="text-xs text-white/50 mt-2">Prix moyen 33 $</p>
