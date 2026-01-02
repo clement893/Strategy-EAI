@@ -231,9 +231,9 @@ export const defaultContent: ContentData = {
     objective2026: 750,
     objectiveIncrease: "+233%",
     revenue2026: 24750,
-    budget: 28000,
-    roi: "0,88:1",
-    cpa: 37.33,
+    budget: 13000,
+    roi: "1,90:1",
+    cpa: 17.33,
     avgPrice: 33,
     objectiveStretched: 850,
     objectiveMinimal: 500
@@ -329,11 +329,11 @@ export const defaultContent: ContentData = {
   budget: {
     sectionNumber: "05",
     sectionTitle: "Budget et répartition",
-    intro: "Le budget marketing total de 28 000 $ est réparti stratégiquement sur trois phases et six canaux d'acquisition, avec un focus majeur sur le partenariat La Presse pour maximiser la crédibilité et la portée.",
-    totalBudget: 28000,
+    intro: "Le budget publicitaire total de 13 000 $ est réparti stratégiquement sur trois phases et six canaux d'acquisition. Le partenariat La Presse est gratuit et constitue un levier média majeur.",
+    totalBudget: 13000,
     laPresseTitle: "Focus : Partenariat La Presse",
-    laPresseIntro: "Le partenariat avec La Presse représente 54 % du budget marketing (15 000 $) et constitue le levier principal pour atteindre les décideurs ICC et générer une crédibilité éditoriale maximale.",
-    laPresseTotal: 15000
+    laPresseIntro: "Le partenariat avec La Presse est gratuit (partenariat média) et constitue le levier principal pour atteindre les décideurs ICC et générer une crédibilité éditoriale maximale.",
+    laPresseTotal: 0
   },
   kpis: {
     sectionNumber: "06",
@@ -346,8 +346,8 @@ export const defaultContent: ContentData = {
   mediaPlan: {
     sectionNumber: "07",
     sectionTitle: "Plan média détaillé et distribution budgétaire",
-    intro: "Répartition stratégique du budget marketing de 28 000 $ sur 6 canaux d'acquisition, avec un focus majeur sur le partenariat La Presse pour maximiser la crédibilité et la portée auprès des décideurs.",
-    totalBudget: 28000
+    intro: "Répartition stratégique du budget publicitaire de 13 000 $ sur 6 canaux d'acquisition. Le partenariat La Presse est gratuit et constitue un levier média majeur.",
+    totalBudget: 13000
   },
   timeline: {
     sectionNumber: "08",
@@ -360,7 +360,7 @@ export const defaultContent: ContentData = {
     intro: "Les billets donnés (250 sur 1 000) ne sont pas une perte, mais un investissement stratégique générant une valeur équivalente ou supérieure au budget marketing. Chaque billet gratuit est attribué à des partenaires qui apportent une contribution tangible à l'événement.",
     totalTickets: 250,
     totalValue: 125000,
-    ratio: "4,5:1",
+    ratio: "9,6:1",
     category1Title: "Partenaires médias",
     category1Tickets: 80,
     category1Value: 40000,
@@ -406,8 +406,8 @@ export const defaultContent: ContentData = {
     targetSales: 750,
     growthPercentage: "+233 %",
     revenue: 24750,
-    valueRatio: "5,3:1",
+    valueRatio: "11,5:1",
     totalValue: 149750,
-    investment: 28000
+    investment: 13000
   }
 };
