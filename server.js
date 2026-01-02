@@ -6,14 +6,9 @@ const { marked } = require('marked');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Set content type for HTML responses
-app.use((req, res, next) => {
-  res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  next();
-});
-
-// Serve static files (images)
+// Serve static files (images and CSS) - must be before routes
 app.use(express.static('.'));
+app.use('/public', express.static('public'));
 
 // Configure marked for better rendering
 marked.setOptions({
@@ -39,6 +34,7 @@ function getHTMLTemplate(title, content) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
+    <link rel="stylesheet" href="/public/style.css">
     <style>
         * {
             margin: 0;
@@ -236,22 +232,26 @@ app.get('/', (req, res) => {
 <ul>
 ${files.map(f => `  <li><a href="${f.path}">${f.name}</a></li>`).join('\n')}
 </ul>`;
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.send(getHTMLTemplate('Stratégie Entertain-AI 2026', content));
 });
 
 // Serve markdown files
 app.get('/strategie-eai-2026', (req, res) => {
   const html = renderMarkdown('strategie-eai-2026.md');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.send(getHTMLTemplate('Stratégie Marketing Entertain-AI 2026', html));
 });
 
 app.get('/strategie-digitale-complete-eai-2026', (req, res) => {
   const html = renderMarkdown('strategie-digitale-complete-eai-2026.md');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.send(getHTMLTemplate('Stratégie Digitale Complète - Entertain-AI 2026', html));
 });
 
 app.get('/plan-modifications-strategie', (req, res) => {
   const html = renderMarkdown('plan-modifications-strategie.md');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.send(getHTMLTemplate('Plan de Modifications - Stratégie', html));
 });
 
