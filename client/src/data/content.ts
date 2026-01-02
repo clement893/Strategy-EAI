@@ -181,26 +181,7 @@ export interface ContentData {
     sectionTitle: string;
     intro: string;
   };
-  freeTickets: {
-    sectionNumber: string;
-    sectionTitle: string;
-    intro: string;
-    totalTickets: number;
-    totalValue: number;
-    ratio: string;
-    category1Title: string;
-    category1Tickets: number;
-    category1Value: number;
-    category2Title: string;
-    category2Tickets: number;
-    category2Value: number;
-    category3Title: string;
-    category3Tickets: number;
-    category3Value: number;
-    category4Title: string;
-    category4Tickets: number;
-    category4Value: number;
-  };
+
   riskManagement: {
     sectionNumber: string;
     sectionTitle: string;
@@ -422,28 +403,9 @@ export const defaultContent: ContentData = {
     sectionTitle: "Calendrier d'exécution détaillé",
     intro: "Planning semaine par semaine du 16 décembre 2025 au 18 février 2026, avec actions prioritaires et objectifs de billets vendus pour chaque période. Ce calendrier assure une exécution rigoureuse et une redistribution équilibrée des ventes."
   },
-  freeTickets: {
-    sectionNumber: "08",
-    sectionTitle: "Stratégie de distribution des billets gratuits",
-    intro: "Les billets donnés (250 sur 1 000) ne sont pas une perte, mais un investissement stratégique générant une valeur équivalente ou supérieure au budget marketing. Chaque billet gratuit est attribué à des partenaires qui apportent une contribution tangible à l'événement.",
-    totalTickets: 250,
-    totalValue: 125000,
-    ratio: "9,6:1",
-    category1Title: "Partenaires médias",
-    category1Tickets: 80,
-    category1Value: 40000,
-    category2Title: "Conférenciers et experts",
-    category2Tickets: 80,
-    category2Value: 40000,
-    category3Title: "Partenaires corporatifs",
-    category3Tickets: 60,
-    category3Value: 30000,
-    category4Title: "Ambassadeurs et promotion",
-    category4Tickets: 30,
-    category4Value: 15000
-  },
+
   riskManagement: {
-    sectionNumber: "09",
+    sectionNumber: "08",
     sectionTitle: "Gestion des risques et plan de contingence",
     intro: "Un plan de contingence structuré pour anticiper et réagir rapidement aux écarts de performance. Le seuil d'alerte est fixé à moins de 300 billets vendus au 31 janvier, déclenchant un budget d'urgence de 5 000 $ et des actions correctives immédiates.",
     alertThreshold: 300,
@@ -451,7 +413,7 @@ export const defaultContent: ContentData = {
     emergencyBudget: 5000
   },
   geographicExpansion: {
-    sectionNumber: "10",
+    sectionNumber: "09",
     sectionTitle: "Expansion géographique : Vision 2027-2028",
     intro: "La stratégie 2026 se concentre exclusivement sur le marché québécois pour maximiser le ROI. L'expansion internationale est reportée à 2027-2028, une fois la preuve de concept établie et le modèle économique validé.",
     whyQuebecTitle: "Pourquoi Québec d'abord ?",
@@ -468,7 +430,7 @@ export const defaultContent: ContentData = {
     year2028Region: "France, Belgique, Suisse"
   },
   conclusion: {
-    sectionNumber: "11",
+    sectionNumber: "10",
     sectionTitle: "Conclusion",
     intro: "L'objectif de 500 billets vendus représente une croissance ambitieuse de +122 % vs 2025, mais réaliste avec une stratégie structurée et des leviers éprouvés.",
     targetSales: 500,

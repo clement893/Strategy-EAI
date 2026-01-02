@@ -9,7 +9,7 @@ import Strategy from "@/components/Strategy";
 import KPIs from "@/components/KPIs";
 import MediaPlan from "@/components/MediaPlan";
 import Timeline from "@/components/Timeline";
-import FreeTickets from "@/components/FreeTickets";
+
 import RiskManagement from "@/components/RiskManagement";
 import GeographicExpansion from "@/components/GeographicExpansion";
 import Conclusion from "@/components/Conclusion";
@@ -30,7 +30,7 @@ export default function Home() {
         <KPIs />
         <MediaPlan />
         <Timeline />
-        <FreeTickets />
+
         <RiskManagement />
         <GeographicExpansion />
         <Conclusion />
