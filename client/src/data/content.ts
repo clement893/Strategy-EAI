@@ -201,6 +201,23 @@ export interface ContentData {
     totalValue: number;
     investment: number;
   };
+  
+  creatives: {
+    sectionNumber: string;
+    sectionTitle: string;
+    intro: string;
+    totalAssets: number;
+    secondaireTitle: string;
+    secondaireDescription: string;
+    secondaireCount: number;
+    generalTitle: string;
+    generalDescription: string;
+    generalCount: number;
+    generalAnimations: number;
+    argumentTitle: string;
+    argumentDescription: string;
+    argumentCount: number;
+  };
 }
 
 export const defaultContent: ContentData = {
@@ -405,5 +422,22 @@ export const defaultContent: ContentData = {
     valueRatio: "11,5:1",
     totalValue: 149750,
     investment: 13000
+  },
+  
+  creatives: {
+    sectionNumber: "10",
+    sectionTitle: "Créatifs publicitaires",
+    intro: "Une banque de 28 assets créatifs conçus pour maximiser l'impact visuel et l'engagement sur les différentes plateformes publicitaires. Chaque catégorie répond à un objectif stratégique spécifique et s'adapte aux formats natifs des canaux d'acquisition.",
+    totalAssets: 28,
+    secondaireTitle: "Secondaire",
+    secondaireDescription: "Design coloré avec blocs de couleurs vives. Message principal : \"Quand l'IA rencontre votre imagination\". Format modulaire adapté aux différentes plateformes sociales.",
+    secondaireCount: 3,
+    generalTitle: "General",
+    generalDescription: "Visuel avec silhouette humaine sur fond dégradé violet/bleu. Inclut 2 animations vidéo pour maximiser l'engagement sur Meta et LinkedIn. Message : \"Quand l'IA rencontre votre imagination\".",
+    generalCount: 11,
+    generalAnimations: 2,
+    argumentTitle: "Argument",
+    argumentDescription: "Créatifs axés sur la proposition de valeur : \"Collaborez avec les talents de demain\". Sous-titre explicatif sur les conférences courtes, cas d'usage concrets et ateliers pratiques. Idéal pour le retargeting et la conversion.",
+    argumentCount: 12
   }
 };

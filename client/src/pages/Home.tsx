@@ -13,6 +13,7 @@ import Timeline from "@/components/Timeline";
 import RiskManagement from "@/components/RiskManagement";
 
 import Conclusion from "@/components/Conclusion";
+import Creatives from "@/components/Creatives";
 import AdminPanel from "@/components/AdminPanel";
 
 export default function Home() {
@@ -34,6 +35,7 @@ export default function Home() {
         <RiskManagement />
 
         <Conclusion />
+        <Creatives />
       </main>
       
       <footer className="py-12 border-t border-white/10 text-center bg-background">
