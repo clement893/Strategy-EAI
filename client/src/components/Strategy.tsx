@@ -162,7 +162,7 @@ export default function Strategy() {
               <CardTitle className="font-sans text-xs uppercase tracking-widest text-white/50">Budget Total</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-5xl font-serif italic">28 000$</div>
+              <div className="text-5xl font-serif italic">13 000$</div>
               <p className="text-sm text-white/60 mt-2">Investissement marketing 2026</p>
             </CardContent>
           </Card>
@@ -172,7 +172,7 @@ export default function Strategy() {
               <CardTitle className="font-sans text-xs uppercase tracking-widest text-white/50">Revenus Totaux</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-5xl font-serif italic text-green-300">24 750$</div>
+              <div className="text-5xl font-serif italic text-green-300">125 000$</div>
               <p className="text-sm text-white/60 mt-2">Revenus billets estimés</p>
             </CardContent>
           </Card>
@@ -182,7 +182,7 @@ export default function Strategy() {
               <CardTitle className="font-sans text-xs uppercase tracking-widest text-white/50">ROI Marketing</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-5xl font-serif italic">0,88:1</div>
+              <div className="text-5xl font-serif italic">9,62:1</div>
               <p className="text-sm text-white/60 mt-2">Retour sur investissement direct</p>
             </CardContent>
           </Card>
