@@ -26,7 +26,7 @@ function renderMarkdown(filePath) {
   }
 }
 
-// HTML template
+// HTML template matching staging design system
 function getHTMLTemplate(title, content) {
   return `<!DOCTYPE html>
 <html lang="fr">
@@ -35,7 +35,14 @@ function getHTMLTemplate(title, content) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
     <link rel="stylesheet" href="/public/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -52,28 +59,21 @@ function getHTMLTemplate(title, content) {
             }
         }
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: var(--font-sans);
             line-height: 1.6;
             color: #ffffff;
             background: #282c84;
             padding: 0;
             animation: fadeIn 0.8s ease-out;
+            font-weight: 300;
         }
         body::before {
             content: '';
@@ -102,250 +102,225 @@ function getHTMLTemplate(title, content) {
             animation: pulse 6s ease-in-out infinite;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 2rem;
+        }
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 1rem;
+            }
         }
         header {
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: fadeInUp 0.8s ease-out;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        header:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease-out;
         }
         header h1 {
             color: #ffffff;
-            margin-bottom: 10px;
-            font-size: 28px;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 400;
         }
         nav {
-            margin-top: 20px;
+            margin-top: 1.25rem;
         }
         nav a {
             display: inline-block;
-            margin-right: 15px;
+            margin-right: 1rem;
             color: #ffffff;
             text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 400;
             transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        nav a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-        nav a:hover::before {
-            left: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 9999px;
         }
         nav a:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            color: #282c84;
         }
         .content {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            padding: 8rem 0;
             animation: fadeInUp 1s ease-out 0.2s both;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .content:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
         .content h1 {
             color: #ffffff;
-            margin-bottom: 20px;
-            border-bottom: 3px solid rgba(255, 255, 255, 0.5);
-            padding-bottom: 10px;
-            font-size: 32px;
-            animation: fadeInUp 1s ease-out 0.4s both;
+            margin-bottom: 1rem;
+            font-size: 3rem;
+            font-family: var(--font-sans);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-top: 0;
         }
         .content h2 {
             color: #ffffff;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 8px;
-            font-size: 24px;
-            animation: fadeInUp 1s ease-out 0.5s both;
-            transition: border-color 0.3s ease;
-        }
-        .content h2:hover {
-            border-bottom-color: rgba(255, 255, 255, 0.6);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 2.25rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.3;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
         }
         .content h3 {
             color: rgba(255, 255, 255, 0.9);
-            margin-top: 25px;
-            margin-bottom: 12px;
-            font-size: 20px;
-            animation: fadeInUp 1s ease-out 0.6s both;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.875rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.4;
         }
         .content h4 {
             color: rgba(255, 255, 255, 0.8);
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 18px;
-            animation: fadeInUp 1s ease-out 0.7s both;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 400;
+        }
+        .content p {
+            margin: 1.5rem 0;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.75;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+        .content ul, .content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        .content li {
+            margin: 0.75rem 0;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.75;
+            font-size: 0.875rem;
+        }
+        .content li::marker {
+            color: rgba(255, 255, 255, 0.5);
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 14px;
+            margin: 2rem 0;
+            font-size: 0.875rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         table th, table td {
-            border: 1px solid #ddd;
-            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
             text-align: left;
         }
         table th {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            font-weight: bold;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        table tr:nth-child(even) {
             background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+            font-family: var(--font-serif);
+            font-style: italic;
+            text-transform: none;
+        }
+        table td {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: var(--font-sans);
         }
         table tr {
             transition: all 0.3s ease;
         }
         table tr:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: scale(1.01);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
         }
         code {
-            background: #f4f4f4;
-            padding: 2px 6px;
-            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
             font-family: 'Courier New', monospace;
-            font-size: 14px;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.9);
         }
         pre {
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
             overflow-x: auto;
-            margin: 20px 0;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         pre code {
             background: none;
             padding: 0;
             color: inherit;
         }
-        ul, ol {
-            margin: 15px 0;
-            padding-left: 30px;
-        }
-        li {
-            margin: 8px 0;
-            color: rgba(255, 255, 255, 0.9);
-        }
         blockquote {
-            border-left: 4px solid rgba(255, 255, 255, 0.5);
-            padding-left: 20px;
-            margin: 20px 0;
-            color: rgba(255, 255, 255, 0.8);
+            border-left: 4px solid rgba(255, 255, 255, 0.3);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: rgba(255, 255, 255, 0.7);
             font-style: italic;
             background: rgba(255, 255, 255, 0.05);
-            padding: 15px 20px;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease-out;
-        }
-        blockquote:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-left-color: rgba(255, 255, 255, 0.7);
-            transform: translateX(5px);
+            padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+            border-radius: 0;
         }
         img {
             max-width: 100%;
             height: auto;
-            border-radius: 5px;
-            margin: 20px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            animation: fadeIn 1s ease-out;
-        }
-        img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            border-radius: 0;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         strong {
             color: #ffffff;
             font-weight: 600;
         }
-        p {
-            margin: 15px 0;
-            color: rgba(255, 255, 255, 0.9);
-        }
         a {
             color: #ffffff;
             text-decoration: none;
             transition: all 0.3s ease;
-            position: relative;
-        }
-        a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.8);
-            transition: width 0.3s ease;
-        }
-        a:hover::after {
-            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
         a:hover {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.8);
+            border-bottom-color: rgba(255, 255, 255, 0.6);
         }
         hr {
             border: none;
-            border-top: 2px solid rgba(255, 255, 255, 0.3);
-            margin: 30px 0;
-            position: relative;
-            animation: fadeIn 1s ease-out;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 4rem 0;
         }
-        hr::after {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.6);
-            animation: expandWidth 2s ease-out 1s forwards;
+        .content > *:first-child {
+            margin-top: 0;
         }
-        @keyframes expandWidth {
-            to {
-                width: 100%;
-            }
+        .content > *:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
-<body style="background: #282c84; margin: 0; padding: 0; color: #ffffff;">
+<body>
     <div class="container">
         <header>
             <h1>Stratégie Entertain-AI 2026</h1>
