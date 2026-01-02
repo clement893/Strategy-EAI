@@ -41,12 +41,65 @@ function getHTMLTemplate(title, content) {
             padding: 0;
             box-sizing: border-box;
         }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #ffffff;
             background: #282c84;
             padding: 0;
+            animation: fadeIn 0.8s ease-out;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 25%;
+            left: 25%;
+            width: 400px;
+            height: 400px;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: 25%;
+            right: 25%;
+            width: 500px;
+            height: 500px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            animation: pulse 6s ease-in-out infinite;
         }
         .container {
             max-width: 1200px;
@@ -60,6 +113,13 @@ function getHTMLTemplate(title, content) {
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 0.8s ease-out;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
         header h1 {
             color: #ffffff;
@@ -76,11 +136,27 @@ function getHTMLTemplate(title, content) {
             text-decoration: none;
             padding: 8px 15px;
             border-radius: 4px;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        nav a:hover::before {
+            left: 100%;
         }
         nav a:hover {
             background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
         .content {
             background: rgba(255, 255, 255, 0.1);
@@ -88,6 +164,13 @@ function getHTMLTemplate(title, content) {
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 1s ease-out 0.2s both;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .content:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
         .content h1 {
             color: #ffffff;
@@ -95,6 +178,7 @@ function getHTMLTemplate(title, content) {
             border-bottom: 3px solid rgba(255, 255, 255, 0.5);
             padding-bottom: 10px;
             font-size: 32px;
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
         .content h2 {
             color: #ffffff;
@@ -103,18 +187,25 @@ function getHTMLTemplate(title, content) {
             border-bottom: 2px solid rgba(255, 255, 255, 0.3);
             padding-bottom: 8px;
             font-size: 24px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+            transition: border-color 0.3s ease;
+        }
+        .content h2:hover {
+            border-bottom-color: rgba(255, 255, 255, 0.6);
         }
         .content h3 {
             color: rgba(255, 255, 255, 0.9);
             margin-top: 25px;
             margin-bottom: 12px;
             font-size: 20px;
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
         .content h4 {
             color: rgba(255, 255, 255, 0.8);
             margin-top: 20px;
             margin-bottom: 10px;
             font-size: 18px;
+            animation: fadeInUp 1s ease-out 0.7s both;
         }
         table {
             width: 100%;
@@ -136,8 +227,12 @@ function getHTMLTemplate(title, content) {
         table tr:nth-child(even) {
             background: rgba(255, 255, 255, 0.05);
         }
+        table tr {
+            transition: all 0.3s ease;
+        }
         table tr:hover {
             background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.01);
         }
         code {
             background: #f4f4f4;
@@ -175,6 +270,13 @@ function getHTMLTemplate(title, content) {
             font-style: italic;
             background: rgba(255, 255, 255, 0.05);
             padding: 15px 20px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+        blockquote:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-left-color: rgba(255, 255, 255, 0.7);
+            transform: translateX(5px);
         }
         img {
             max-width: 100%;
@@ -182,6 +284,12 @@ function getHTMLTemplate(title, content) {
             border-radius: 5px;
             margin: 20px 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-out;
+        }
+        img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
         }
         strong {
             color: #ffffff;
@@ -194,14 +302,46 @@ function getHTMLTemplate(title, content) {
         a {
             color: #ffffff;
             text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.8);
+            transition: width 0.3s ease;
+        }
+        a:hover::after {
+            width: 100%;
         }
         a:hover {
-            text-decoration: underline;
+            color: rgba(255, 255, 255, 0.9);
         }
         hr {
             border: none;
             border-top: 2px solid rgba(255, 255, 255, 0.3);
             margin: 30px 0;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+        hr::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.6);
+            animation: expandWidth 2s ease-out 1s forwards;
+        }
+        @keyframes expandWidth {
+            to {
+                width: 100%;
+            }
         }
     </style>
 </head>
