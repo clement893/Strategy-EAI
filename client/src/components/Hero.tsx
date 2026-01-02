@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { useContent } from "@/contexts/ContentContext";
+import EditableField from "./EditableField";
 
 export default function Hero() {
+  const { content } = useContent();
+  
   const scrollToContent = () => {
     const element = document.getElementById("executive-summary");
     if (element) {
@@ -24,16 +28,38 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="inline-block py-1 px-3 rounded-full border border-white/20 bg-white/5 text-xs font-sans uppercase tracking-widest mb-8">
-            Préparé par Nukleo • Décembre 2025
+            <EditableField 
+              path="hero.subtitle" 
+              value={content.hero.subtitle}
+              className="text-xs font-sans uppercase tracking-widest"
+            />
           </span>
           
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-sans font-bold tracking-tight mb-6 leading-none">
-            Stratégie Marketing <br />
-            <span className="font-serif italic font-normal text-white/90">Entertain-AI 2026</span>
+            <EditableField 
+              path="hero.title" 
+              value={content.hero.title}
+              className="text-6xl md:text-8xl lg:text-9xl font-sans font-bold tracking-tight"
+              as="span"
+            />
+            <br />
+            <span className="font-serif italic font-normal text-white/90">
+              <EditableField 
+                path="hero.titleItalic" 
+                value={content.hero.titleItalic}
+                className="font-serif italic font-normal text-white/90"
+              />
+            </span>
           </h1>
           
           <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/60 font-sans font-light leading-relaxed mb-12">
-            Plan d'action pour maximiser les ventes, redistribuer la croissance et solidifier le leadership IA au sein des ICC du Québec
+            <EditableField 
+              path="hero.description" 
+              value={content.hero.description}
+              type="textarea"
+              className="text-lg md:text-xl text-white/60 font-sans font-light leading-relaxed"
+              as="span"
+            />
           </p>
         </motion.div>
 

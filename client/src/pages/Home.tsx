@@ -13,6 +13,7 @@ import FreeTickets from "@/components/FreeTickets";
 import RiskManagement from "@/components/RiskManagement";
 import GeographicExpansion from "@/components/GeographicExpansion";
 import Conclusion from "@/components/Conclusion";
+import AdminPanel from "@/components/AdminPanel";
 
 export default function Home() {
   return (
@@ -43,6 +44,8 @@ export default function Home() {
           © 2025 Entertain-AI Strategy • Confidential
         </p>
       </footer>
+      
+      <AdminPanel />
     </div>
   );
 }
