@@ -6,6 +6,12 @@ const { marked } = require('marked');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Set content type for HTML responses
+app.use((req, res, next) => {
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  next();
+});
+
 // Serve static files (images)
 app.use(express.static('.'));
 
@@ -27,8 +33,7 @@ function renderMarkdown(filePath) {
 
 // HTML template
 function getHTMLTemplate(title, content) {
-  return `
-<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -45,6 +50,7 @@ function getHTMLTemplate(title, content) {
             line-height: 1.6;
             color: #333;
             background: #f5f5f5;
+            padding: 0;
         }
         .container {
             max-width: 1200px;
@@ -58,6 +64,11 @@ function getHTMLTemplate(title, content) {
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
         nav {
             margin-top: 20px;
         }
@@ -66,8 +77,9 @@ function getHTMLTemplate(title, content) {
             margin-right: 15px;
             color: #0066cc;
             text-decoration: none;
-            padding: 5px 10px;
+            padding: 8px 15px;
             border-radius: 4px;
+            transition: background 0.3s;
         }
         nav a:hover {
             background: #f0f0f0;
@@ -78,28 +90,38 @@ function getHTMLTemplate(title, content) {
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        h1 {
+        .content h1 {
             color: #2c3e50;
             margin-bottom: 20px;
             border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
+            font-size: 32px;
         }
-        h2 {
+        .content h2 {
             color: #34495e;
             margin-top: 30px;
             margin-bottom: 15px;
             border-bottom: 2px solid #ecf0f1;
             padding-bottom: 8px;
+            font-size: 24px;
         }
-        h3 {
+        .content h3 {
             color: #555;
             margin-top: 25px;
             margin-bottom: 12px;
+            font-size: 20px;
+        }
+        .content h4 {
+            color: #666;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
+            font-size: 14px;
         }
         table th, table td {
             border: 1px solid #ddd;
@@ -114,11 +136,15 @@ function getHTMLTemplate(title, content) {
         table tr:nth-child(even) {
             background: #f9f9f9;
         }
+        table tr:hover {
+            background: #f0f0f0;
+        }
         code {
             background: #f4f4f4;
             padding: 2px 6px;
             border-radius: 3px;
             font-family: 'Courier New', monospace;
+            font-size: 14px;
         }
         pre {
             background: #2c3e50;
@@ -146,15 +172,34 @@ function getHTMLTemplate(title, content) {
             margin: 20px 0;
             color: #666;
             font-style: italic;
+            background: #f9f9f9;
+            padding: 15px 20px;
         }
         img {
             max-width: 100%;
             height: auto;
             border-radius: 5px;
             margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         strong {
             color: #2c3e50;
+            font-weight: 600;
+        }
+        p {
+            margin: 15px 0;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 30px 0;
         }
     </style>
 </head>
@@ -174,8 +219,7 @@ function getHTMLTemplate(title, content) {
         </div>
     </div>
 </body>
-</html>
-  `;
+</html>`;
 }
 
 // Home page - list all documents
@@ -186,14 +230,12 @@ app.get('/', (req, res) => {
     { name: 'Plan de Modifications', path: '/plan-modifications-strategie', file: 'plan-modifications-strategie.md' }
   ];
 
-  const content = `
-    <h1>Documentation Stratégie Entertain-AI 2026</h1>
-    <p>Bienvenue sur la documentation de la stratégie marketing et digitale pour Entertain-AI 2026.</p>
-    <h2>Documents disponibles</h2>
-    <ul>
-      ${files.map(f => `<li><a href="${f.path}">${f.name}</a></li>`).join('')}
-    </ul>
-  `;
+  const content = `<h1>Documentation Stratégie Entertain-AI 2026</h1>
+<p>Bienvenue sur la documentation de la stratégie marketing et digitale pour Entertain-AI 2026.</p>
+<h2>Documents disponibles</h2>
+<ul>
+${files.map(f => `  <li><a href="${f.path}">${f.name}</a></li>`).join('\n')}
+</ul>`;
   res.send(getHTMLTemplate('Stratégie Entertain-AI 2026', content));
 });
 
