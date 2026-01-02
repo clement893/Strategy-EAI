@@ -44,8 +44,8 @@ function getHTMLTemplate(title, content) {
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            color: #ffffff;
+            background: #282c84;
             padding: 0;
         }
         .container {
@@ -54,14 +54,15 @@ function getHTMLTemplate(title, content) {
             padding: 20px;
         }
         header {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         header h1 {
-            color: #2c3e50;
+            color: #ffffff;
             margin-bottom: 10px;
             font-size: 28px;
         }
@@ -71,44 +72,46 @@ function getHTMLTemplate(title, content) {
         nav a {
             display: inline-block;
             margin-right: 15px;
-            color: #0066cc;
+            color: #ffffff;
             text-decoration: none;
             padding: 8px 15px;
             border-radius: 4px;
             transition: background 0.3s;
+            background: rgba(255, 255, 255, 0.1);
         }
         nav a:hover {
-            background: #f0f0f0;
+            background: rgba(255, 255, 255, 0.2);
         }
         .content {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.1);
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .content h1 {
-            color: #2c3e50;
+            color: #ffffff;
             margin-bottom: 20px;
-            border-bottom: 3px solid #3498db;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.5);
             padding-bottom: 10px;
             font-size: 32px;
         }
         .content h2 {
-            color: #34495e;
+            color: #ffffff;
             margin-top: 30px;
             margin-bottom: 15px;
-            border-bottom: 2px solid #ecf0f1;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
             padding-bottom: 8px;
             font-size: 24px;
         }
         .content h3 {
-            color: #555;
+            color: rgba(255, 255, 255, 0.9);
             margin-top: 25px;
             margin-bottom: 12px;
             font-size: 20px;
         }
         .content h4 {
-            color: #666;
+            color: rgba(255, 255, 255, 0.8);
             margin-top: 20px;
             margin-bottom: 10px;
             font-size: 18px;
@@ -125,15 +128,16 @@ function getHTMLTemplate(title, content) {
             text-align: left;
         }
         table th {
-            background: #3498db;
+            background: rgba(255, 255, 255, 0.2);
             color: white;
             font-weight: bold;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         table tr:nth-child(even) {
-            background: #f9f9f9;
+            background: rgba(255, 255, 255, 0.05);
         }
         table tr:hover {
-            background: #f0f0f0;
+            background: rgba(255, 255, 255, 0.1);
         }
         code {
             background: #f4f4f4;
@@ -161,14 +165,15 @@ function getHTMLTemplate(title, content) {
         }
         li {
             margin: 8px 0;
+            color: rgba(255, 255, 255, 0.9);
         }
         blockquote {
-            border-left: 4px solid #3498db;
+            border-left: 4px solid rgba(255, 255, 255, 0.5);
             padding-left: 20px;
             margin: 20px 0;
-            color: #666;
+            color: rgba(255, 255, 255, 0.8);
             font-style: italic;
-            background: #f9f9f9;
+            background: rgba(255, 255, 255, 0.05);
             padding: 15px 20px;
         }
         img {
@@ -179,14 +184,15 @@ function getHTMLTemplate(title, content) {
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         strong {
-            color: #2c3e50;
+            color: #ffffff;
             font-weight: 600;
         }
         p {
             margin: 15px 0;
+            color: rgba(255, 255, 255, 0.9);
         }
         a {
-            color: #0066cc;
+            color: #ffffff;
             text-decoration: none;
         }
         a:hover {
@@ -194,12 +200,12 @@ function getHTMLTemplate(title, content) {
         }
         hr {
             border: none;
-            border-top: 2px solid #ecf0f1;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
             margin: 30px 0;
         }
     </style>
 </head>
-<body style="background: #f5f5f5; margin: 0; padding: 0;">
+<body style="background: #282c84; margin: 0; padding: 0; color: #ffffff;">
     <div class="container">
         <header>
             <h1>Stratégie Entertain-AI 2026</h1>
