@@ -5,15 +5,15 @@ export default function KPIs() {
     {
       category: "Ventes",
       metrics: [
-        { label: "Billets vendus", value: "750", unit: "", desc: "+233 % vs 2025" },
-        { label: "Prix moyen", value: "33", unit: "$", desc: "par billet" },
-        { label: "Revenus totaux", value: "24 750", unit: "$", desc: "revenus billets" }
+        { label: "Billets vendus", value: "500", unit: "", desc: "+122 % vs 2025" },
+        { label: "Prix moyen", value: "250", unit: "$", desc: "par billet" },
+        { label: "Revenus totaux", value: "125 000", unit: "$", desc: "revenus billets" }
       ]
     },
     {
       category: "Acquisition",
       metrics: [
-        { label: "CPA moyen", value: "37,33", unit: "$", desc: "coût par acquisition" },
+        { label: "CPA moyen", value: "26", unit: "$", desc: "coût par acquisition" },
         { label: "Trafic site", value: "40 000", unit: "+", desc: "visiteurs uniques" },
         { label: "Taux de conversion", value: "1,9", unit: "%", desc: "conversion moyenne" }
       ]
@@ -65,8 +65,8 @@ export default function KPIs() {
           <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
             <CardContent className="p-8">
               <h5 className="font-sans text-xs uppercase tracking-widest text-white/50 mb-4">Objectif étiré</h5>
-              <div className="text-5xl font-serif italic mb-2 text-blue-300">850</div>
-              <p className="text-white/60 text-sm mb-4">billets vendus (+278 % vs 2025)</p>
+              <div className="text-5xl font-serif italic mb-2 text-blue-300">600</div>
+              <p className="text-white/60 text-sm mb-4">billets vendus (+167 % vs 2025)</p>
               <p className="text-xs text-white/50">
                 Scénario exceptionnel en cas de surperformance des campagnes et d'un effet viral organique majeur.
               </p>
@@ -76,8 +76,8 @@ export default function KPIs() {
           <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
             <CardContent className="p-8">
               <h5 className="font-sans text-xs uppercase tracking-widest text-white/50 mb-4">Seuil de succès minimal</h5>
-              <div className="text-5xl font-serif italic mb-2 text-yellow-300">500</div>
-              <p className="text-white/60 text-sm mb-4">billets vendus (+122 % vs 2025)</p>
+              <div className="text-5xl font-serif italic mb-2 text-yellow-300">400</div>
+              <p className="text-white/60 text-sm mb-4">billets vendus (+78 % vs 2025)</p>
               <p className="text-xs text-white/50">
                 Seuil minimum pour considérer la stratégie comme un succès et justifier l'investissement marketing.
               </p>
